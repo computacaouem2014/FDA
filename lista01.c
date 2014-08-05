@@ -314,6 +314,18 @@ int main(int argc, char **argv) {
 	// Inicializar o gerador aleatorio
 	srand(time(NULL));
 	
+	/**
+	 * Como usar o rand() para gerar números aleatórios pra teste dos algoritmos:
+	 * Incluir a biblioteca padrão: "#include <stdlib.h>"
+	 * Incluir a biblioteca time: "#include <time.h>"
+	 * Inicializar a "seed" do gerador com essa função: "srand(time(NULL));"
+	 * OBS.: Não é necessário realizar a inicialização mais que uma vez.
+	 * Formato para uso: "rand() % num_max + inc_num_min;"
+	 * Que resulta em um número aleatório entre '0 + inc_num_min' inclusivo e 'num_max + inc_num_min' exclusivo.
+	 * Exemplo: "rand() % 10 + 1;"
+	 * Gera um número entre (1, 11], ou seja, um destes: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
+	 * */
+	
 	// Titulo
 	print("LISTA DE EXERCICIOS DE FDA - 01");
 	
