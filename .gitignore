@@ -1,0 +1,9 @@
+*.cproject
+*.project
+Debug/
+Release/
+Makefile
+.codelite/
+CMakeLists.txt
+*.mk
+*.workspace
