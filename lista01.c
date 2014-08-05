@@ -268,7 +268,7 @@ void ex5(){
 	x = 1, y = 1, a = 0, b = 0;
 	
 	print("\nSegundo algoritmo:");
-	print("\tX = X + Y\n\tX = X**2\n\tA = X + Y\n\tB = A - 5.0\n\tY = A\n\tB = B / Y + 2.0\n\tX = (Y + A) / B\n\tY = Y / A + X /B");
+	print("\tX = X + Y\n\tX = X*2\n\tA = X + Y\n\tB = A - 5.0\n\tY = A\n\tB = B / Y + 2.0\n\tX = (Y + A) / B\n\tY = Y / A + X /B");
 
 	// Segundo algoritmo:
 	x = x + y;
