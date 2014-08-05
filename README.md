@@ -5,7 +5,7 @@ Listas de exercícios de FDA. Recomendável resolvê-las por conta própria e us
 
 ===
 Como usar:
-  * Você pode visualizar os arquivo pelo próprio GitHub.
+  * Você pode visualizar os arquivos pelo próprio GitHub.
   * Baixar e editar no Code::Blocks ou qualquer outra IDE.
 
 ===
