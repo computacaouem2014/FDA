@@ -33,7 +33,7 @@ void ex2(){
 	
 	print("2. Os dois ultimos comandos de atribuicao do exercicio anterior (letras f e g) tem o mesmo significado?\nExplicar por que.\n");
 	
-	int a = rand() % 10 + 2, b = rand() % 10 + 1; 
+	int a = rand() % 10 + 2, b = rand() % 10 + 1;
 	
 	// Letra F:
 	int raiz1 = -b / 2 * a;
@@ -311,8 +311,10 @@ void ex6(){
 
 int main(int argc, char **argv) {
 
+	// Inicializar o gerador aleatorio
 	srand(time(NULL));
 	
+	// Titulo
 	print("LISTA DE EXERCICIOS DE FDA - 01");
 	
 	ex1();
