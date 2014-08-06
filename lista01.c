@@ -323,7 +323,7 @@ int main(int argc, char **argv) {
 	 * Formato para uso: "rand() % num_max + inc_num_min;"
 	 * Que resulta em um número aleatório entre '0 + inc_num_min' inclusivo e 'num_max + inc_num_min' exclusivo.
 	 * Exemplo: "rand() % 10 + 1;"
-	 * Gera um número entre (1, 11], ou seja, um destes: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
+	 * Gera um número entre [1, 11), ou seja, um destes: { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }
 	 * */
 	
 	// Titulo
