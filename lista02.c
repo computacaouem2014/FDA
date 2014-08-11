@@ -275,7 +275,7 @@ void ex12(){
 	
 	float ipi;
 	
-	print("Por favor informe o IPI (em %):");
+	print("Por favor informe o IPI (em %%):");
 	scanf("%f", &ipi);
 	
 	ipi /= 100;
