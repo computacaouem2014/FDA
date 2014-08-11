@@ -22,7 +22,7 @@ void ex1(){
 	print("P > X || P > Y || P > Z\n");
 	
 	print("0 <= x < 6");
-	print("X >= 0 && X < 6\n");
+	print("x >= 0 && x < 6\n");
 	
 	print("m > 50 ou m < 0");
 	print("m > 50 || m < 0\n");
@@ -31,7 +31,7 @@ void ex1(){
 	print("!(x < y)\n");
 	
 	print("x nao é menor que y, nem menor que z.");
-	print("!(x < y) && X !(x < z)\n");
+	print("!(x < y) && !(x < z)\n");
 	
 	print("a = b = c");
 	print("a == b && b == c\n");
@@ -129,6 +129,7 @@ void ex5(){
 
 	int horas = tempo_em_segundos / 3600;
 	int minutos = (tempo_em_segundos - (horas * 3600)) / 60;
+	// int minutos = (tempo_em_segundos % 3600) / 3600;
 	int segundos = tempo_em_segundos % 60;
 	
 	printf("%d segundos equivalem a %02dh:%02dm:%02ds\n", tempo_em_segundos, horas, minutos, segundos);
