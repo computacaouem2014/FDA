@@ -347,6 +347,18 @@ void ex13(){
 int main(int argc, char **argv) {
 	
 	print("LISTA DE EXERCICIOS DE FDA - 02");
+	ex1();
+	ex2();
+	ex3();
+	ex4();
+	ex5();
+	ex6();
+	ex7();
+	ex8();
+	ex9();
+	ex10();
+	ex11();
+	ex12();
 	ex13();
 	
 	return 0;
