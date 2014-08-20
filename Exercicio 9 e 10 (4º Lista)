@@ -1,0 +1,89 @@
+void ex9(){
+char opc;
+    printf("Menu:\nDigite uma das seguintes opcoes para selecionar o cargo:\n1)Escriturario\n2)Secretario\n3)Caixa\n4)Gerente\n5)Diretor\nOpcao: ");
+    scanf("%s", &opc);
+    if(opc == '1')
+    {
+        printf("Escrituario selecionado.\nDigite o salario atual: ");
+        float sale, contae;
+        scanf("%f", &sale);
+        contae = sale*0.5;
+        printf("O cargo Escrituario possui salario de R$%.2f e tera um aumento de R$%.2f sendo o salario final de R$%.2f\n", sale, contae, contae+sale);
+        return 0;
+        }else{if(opc == '2'){
+            printf("Secretario selecionado.\nDigite o salario atual: ");
+            float sals, contas;
+            scanf("%f", &sals);
+            contas = sals*0.35;
+            printf("O cargo Secretario possui salario de R$%.2f e tera um aumento de R$%.2f sendo o salario final de R$%.2f\n", sals, contas, contas+sals);
+            return 0;
+            }else{if(opc == '3'){
+                printf("Caixa selecionado.\nDigite o salario atual: ");
+                float salc, contac;
+                scanf("%f", &salc);
+                contac = salc*0.2;
+                printf("O cargo Caixa possui salario de R$%.2f e tera um aumento de R$%.2f sendo o salario final de R$%.2f\n", salc, contac, contac+salc);
+                return 0;
+                }else{if(opc == '4'){
+                    printf("Gerente selecionado.\nDigite o salario atual: ");
+                    float salg, contag;
+                    scanf("%f", &salg);
+                    contag = salg*0.5;
+                    printf("O cargo Gerente possui salario de R$%.2f e tera um aumento de R$%.2f sendo o salario final de R$%.2f\n", salg, contag, contag+salg);
+                    }else{if(opc == '5'){
+                        printf("Diretor selecionado.\nInfelizmente o cargo selecionado nao possui aumento.");
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
+
+    printf("Opcao inexistente!");
+    return 0;
+}
+
+void ex10(){
+
+float alt, peso;
+    printf("Informe o seu peso: ");
+    scanf("%f", &peso);
+    printf("Informe a sua altura: ");
+    scanf("%f", &alt);
+    if(alt<=1.2)
+    {if(peso<=60){
+        printf("Sua classificacao e A");
+        }else{if(peso<=90){
+            printf("Sua classificacao e D");
+            }else{if(peso>91){
+            printf("Sua classificacao e G");}
+            }
+        }
+
+    }
+    if(alt<=1.7)
+    {if(peso<=60){
+        printf("Sua classificacao e B");
+        }else{if(peso<=90){
+            printf("Sua classificacao e E");
+            }else{if(peso>91){
+            printf("Sua classificacao e H");}
+            }
+        }
+
+    }
+    if(alt>1.7)
+    {if(peso<=60){
+        printf("Sua classificacao e C");
+        }else{if(peso<=90){
+            printf("Sua classificacao e F");
+            }else{if(peso>91){
+            printf("Sua classificacao e I");}
+            }
+        }
+
+    }
+
+
+    return 0;
+}
