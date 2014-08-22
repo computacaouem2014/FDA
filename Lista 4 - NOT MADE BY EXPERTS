@@ -38,9 +38,9 @@ void ex3(){
     printf("Informe um ano para saber se ele e bissexto:");
     scanf("%d", &ano);
     if(ano%4==0 || ano%400==0){
-        printf("O ano %d e bissesto\n", ano);
+        printf("O ano %d e bissexto\n", ano);
     }else{
-        printf("O ano %d nao e bissesto\n", ano);
+        printf("O ano %d nao e bissexto\n", ano);
     }
     return 0;
 }
