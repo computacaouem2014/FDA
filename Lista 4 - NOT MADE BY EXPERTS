@@ -9,8 +9,7 @@ void ex1 (){
     scanf("%d", &x);
     printf("Digite dois valores a serem somados, dando espaco entre os valores: ");
     scanf("%d %d", &a, &b);
-    while(a+b<=0)
-    {
+    while(a+b<=0){
         printf("Por favor, insira valores que sua soma de maior que zero:");
         scanf("%d %d", &a, &b);
     }
@@ -25,8 +24,7 @@ void ex2(){
     float raiz;
     printf("Inforome um numero para calcular sua raiz:");
     scanf("%d", &num);
-    while(num<=0)
-    {
+    while(num<=0){
         printf("Por favor, informar numeros maior que zero: ");
         scanf("%d", &num);
     }
@@ -37,10 +35,9 @@ void ex2(){
 
 void ex3(){
     int ano;
-    printf("Informe um ano para saber se ele e bissesto:");
+    printf("Informe um ano para saber se ele e bissexto:");
     scanf("%d", &ano);
-    if(ano%4==0 || ano%400==0)
-    {
+    if(ano%4==0 || ano%400==0){
         printf("O ano %d e bissesto\n", ano);
     }else{
         printf("O ano %d nao e bissesto\n", ano);
@@ -52,8 +49,7 @@ void ex4(){
 float sal, conta, rea;
     printf("Informe o salario a ser informado:");
     scanf("%f", &sal);
-    while(sal>=2000)
-    {
+    while(sal>=2000){
         printf("O salario informado nao deve sofrer reajuste!\n");
         return 0;
     }
@@ -68,28 +64,24 @@ int a, b, c;
     float s, area, conta;
     printf("Informe a medida do lado a do triangulo: ");
     scanf("%d", &a);
-    while(a<=0)
-    {
+    while(a<=0){
         printf("Insira uma medida maior que 0: ");
         scanf("%d", &a);
     }
     printf("Informe a medida do lado b do triangulo: ");
     scanf("%d", &b);
-    while(b<=0)
-    {
+    while(b<=0){
         printf("Insira uma medida maior que 0: ");
         scanf("%d", &b);
     }
     printf("Informe a medida do lado c do triangulo: ");
     scanf("%d", &c);
-    while(c<=0)
-    {
+    while(c<=0){
         printf("Insira uma medida maior que 0: ");
         scanf("%d", &c);
     }
     s = (a+b+c)/2;
-    if(s>= a||b||c)
-    {
+    if(s>= a||b||c){
         printf("A soma das duas menores medidas nao pode ser maior ou igual a terceira medida pois isso nao implica em um triangulo!");
         return 0;
     }
@@ -102,8 +94,7 @@ void ex6(){
 char opc;
     printf("Menu:\n1)Digite 1 para calcular o volume da esfera.\n2)Digite 2 para calcular o volume do paralelepipedo.\nOpcao: ");
     scanf("%c", &opc);
-    if(opc == '1')
-    {
+    if(opc == '1'){
         int r;
         float vol;
         printf("Opcao 1 selecionado. Calculo do volume da esfera.\n");
@@ -178,8 +169,7 @@ void ex9(){
 char opc;
     printf("Menu:\nDigite uma das seguintes opcoes para selecionar o cargo:\n1)Escriturario\n2)Secretario\n3)Caixa\n4)Gerente\n5)Diretor\nOpcao: ");
     scanf("%s", &opc);
-    if(opc == '1')
-    {
+    if(opc == '1'){
         printf("Escrituario selecionado.\nDigite o salario atual: ");
         float sale, contae;
         scanf("%f", &sale);
