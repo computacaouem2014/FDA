@@ -3,8 +3,8 @@
 #include<math.h>
 
 void ex1 (){
-    int x, a, b;
-    float conta, raiz;
+    int a, b;
+    float x, conta, raiz;
     printf("Digite o valor a ser dividido: ");
     scanf("%d", &x);
     printf("Digite dois valores a serem somados, dando espaco entre os valores: ");
