@@ -47,11 +47,10 @@ void ex3(){
 
 void ex4(){
 float sal, conta, rea;
-    printf("Informe o salario a ser informado:");
+    printf("Informe o salario a ser reajustado:");
     scanf("%f", &sal);
-    while(sal>=2000){
+    if(sal>=2000){
         printf("O salario informado nao deve sofrer reajuste!\n");
-        return 0;
     }
     conta = sal*(0.3);
     rea = conta+sal;
