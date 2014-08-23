@@ -16,4 +16,6 @@ Links:
   * [CodeLite](http://downloads.codelite.org/)
   * [Eclipse com Extensão para C/C++](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/lunar)
   * [NetBeans (pacotes com apenas C/C++ ou completo)](https://netbeans.org/downloads/)
-  * Visual Studio: [Aqui](http://www.visualstudio.com/downloads/download-visual-studio-vs) ou [aqui](http://thepiratebay.se/)
+  * Visual Studio: [Aqui](http://www.visualstudio.com/downloads/download-visual-studio-vs) ou [aqui](http://thepiratebay.se/).
+
+===
