@@ -120,31 +120,39 @@ void ex5() {
 
 	print("\n------------------------------\n");
 
-	int a, b, c;
+	int a, b, c, retangulo;
 
-	print("Informe a medida do lado a:");
-	scanf("%d", & a);
-
-	while (!(a > 0)) {
-		print("Valor invalido, tente novamente:");
+	while(!retangulo){
+		print("Informe a medida do lado a:");
 		scanf("%d", & a);
-	}
 
-	print("Informe a medida do lado b:");
-	scanf("%d", & b);
+		while (!(a > 0)) {
+			print("Valor invalido, tente novamente:");
+			scanf("%d", & a);
+		}
 
-
-	while (!(b > 0)) {
-		print("Valor invalido, tente novamente:");
+		print("Informe a medida do lado b:");
 		scanf("%d", & b);
-	}
 
-	print("Informe a medida do lado c:");
-	scanf("%d", & c);
 
-	while (!(c > 0)) {
-		print("Valor invalido, tente novamente:");
+		while (!(b > 0)) {
+			print("Valor invalido, tente novamente:");
+			scanf("%d", & b);
+		}
+
+		print("Informe a medida do lado c:");
 		scanf("%d", & c);
+
+		while (!(c > 0)) {
+			print("Valor invalido, tente novamente:");
+			scanf("%d", & c);
+		}
+		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)){
+			retangulo = 1;
+		} else {
+			printf("Essas medidas nao formam um triangulo retangulo.");
+			printf("Por favor tente novamente.");
+		}
 	}
 
 	float s = (a + b + c) / 2.;
@@ -223,6 +231,169 @@ void ex6() {
 		}
 
 	}
+
+	print("\n------------------------------\n");
+
+}
+
+void ex7(){
+
+	print("\n------------------------------\n");
+
+	float ch, ph;
+
+	print("Informe a concentracao de ions H+:");
+	scanf("%f", & ch);
+
+	while (!(ch > 0)) {
+		print("Valor invalido, tente novamente:");
+		scanf("%f", & ch);
+	}
+
+	ph = -1 * log10(ch);
+
+	printf("O pH e: %.2f (%s).", ph, ph > 7 ? "basico" : (ph == 7 ? "neutro" : "acido"));
+
+	print("\n------------------------------\n");
+
+}
+
+void ex8(){
+
+	print("\n------------------------------\n");
+
+	int hora_inicial, hora_final, minuto_inicial, minuto_final;
+
+	print("Informe o horario de inicio do jogo:");
+
+	printf("Horas: ");
+	scanf("%d", &hora_inicial);
+	while (!(hora_inicial >= 0 && hora_inicial < 24)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%d", & hora_inicial);
+	}
+
+	printf("Minutos: ");
+	scanf("%d", &minuto_inicial);
+	while (!(minuto_inicial >= 0 && minuto_inicial < 60)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%d", & minuto_inicial);
+	}
+
+	print("Informe o horario de termino do jogo:");
+
+	printf("Horas: ");
+	scanf("%d", &hora_final);
+	while (!(hora_final >= 0 && hora_final < 24)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%d", & hora_final);
+	}
+
+	printf("Minutos: ");
+	scanf("%d", &minuto_final);
+	while (!(minuto_final >= 0 && minuto_final < 60)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%d", & minuto_final);
+	}
+
+	int duracao;
+
+	duracao = (hora_final * 60 + minuto_final) - (hora_inicial * 60 + minuto_inicial);
+
+	if (duracao < 0) {
+		duracao += 1440;
+	}
+
+	printf("\nA duracao do jogo foi de: %02dh:%02dm\n", duracao / 60, duracao % 60);
+
+	print("\n------------------------------\n");
+
+}
+
+void ex9(){
+
+	print("\n------------------------------\n");
+
+	int cargo;
+	float salario_atual;
+
+	printf("Informe o codigo de cargo do funcionario: ");
+	scanf("%d", &cargo);
+	while (!(cargo > 0 && cargo < 6)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%d", &cargo);
+	}
+
+	printf("Informe o salario atual do funcionario: ");
+	scanf("%f", &salario_atual);
+	while (!(salario_atual > 0)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%f", &salario_atual);
+	}
+
+	float aumento, salario_novo;
+
+	if (cargo == 1){
+		aumento = .5 * salario_atual;
+		salario_novo = salario_atual + aumento;
+		printf("\nCargo: Escrituario\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
+	} else if (cargo == 2){
+		aumento = .35 * salario_atual;
+		salario_novo = salario_atual + aumento;
+		printf("\nCargo: Secretario\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
+	} else if (cargo == 3){
+		aumento = .2 * salario_atual;
+		salario_novo = salario_atual + aumento;
+		printf("\nCargo: Caixa\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
+	} else if (cargo == 4){
+		aumento = .1 * salario_atual;
+		salario_novo = salario_atual + aumento;
+		printf("\nCargo: Gerente\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
+	} else if (cargo == 5){
+		aumento = .0 * salario_atual;
+		salario_novo = salario_atual + aumento;
+		printf("\nCargo: Diretor\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
+	}
+
+	print("\n------------------------------\n");
+
+}
+
+void ex10(){
+
+	print("\n------------------------------\n");
+
+	float peso, altura;
+
+	printf("Informe o peso: ");
+	scanf("%f", &peso);
+	while (!(peso > 0)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%f", &peso);
+	}
+
+	printf("Informe a altura: ");
+	scanf("%f", &altura);
+	while (!(altura > 0)) {
+		printf("Valor invalido, tente novamente: ");
+		scanf("%f", &altura);
+	}
+
+	int grupo = 0;
+	char grupos[10] = "ABCDEFGHI";
+
+	if (peso > 90)
+		grupo += 6;
+	else if (peso > 60)
+		grupo += 3;
+
+	if (altura > 1.7)
+		grupo += 2;
+	else if (altura >= 1.2)
+		grupo++;
+
+	printf("Sua classificacao e: %c\n", grupos[grupo]);
+
 	print("\n------------------------------\n");
 
 }
@@ -231,7 +402,7 @@ int main() {
 
 	print("LISTA DE EXERCICIOS DE FDA - 04");
 
-	ex6();
+	ex10();
 
 	getchar();
 	getchar();
