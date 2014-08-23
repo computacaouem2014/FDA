@@ -122,7 +122,7 @@ void ex5() {
 
 	int a, b, c, retangulo;
 
-	while(!retangulo){
+	while (!retangulo) {
 		print("Informe a medida do lado a:");
 		scanf("%d", & a);
 
@@ -147,7 +147,7 @@ void ex5() {
 			print("Valor invalido, tente novamente:");
 			scanf("%d", & c);
 		}
-		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)){
+		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
 			retangulo = 1;
 		} else {
 			printf("Essas medidas nao formam um triangulo retangulo.");
@@ -236,7 +236,7 @@ void ex6() {
 
 }
 
-void ex7(){
+void ex7() {
 
 	print("\n------------------------------\n");
 
@@ -258,7 +258,7 @@ void ex7(){
 
 }
 
-void ex8(){
+void ex8() {
 
 	print("\n------------------------------\n");
 
@@ -267,14 +267,14 @@ void ex8(){
 	print("Informe o horario de inicio do jogo:");
 
 	printf("Horas: ");
-	scanf("%d", &hora_inicial);
+	scanf("%d", & hora_inicial);
 	while (!(hora_inicial >= 0 && hora_inicial < 24)) {
 		printf("Valor invalido, tente novamente: ");
 		scanf("%d", & hora_inicial);
 	}
 
 	printf("Minutos: ");
-	scanf("%d", &minuto_inicial);
+	scanf("%d", & minuto_inicial);
 	while (!(minuto_inicial >= 0 && minuto_inicial < 60)) {
 		printf("Valor invalido, tente novamente: ");
 		scanf("%d", & minuto_inicial);
@@ -283,14 +283,14 @@ void ex8(){
 	print("Informe o horario de termino do jogo:");
 
 	printf("Horas: ");
-	scanf("%d", &hora_final);
+	scanf("%d", & hora_final);
 	while (!(hora_final >= 0 && hora_final < 24)) {
 		printf("Valor invalido, tente novamente: ");
 		scanf("%d", & hora_final);
 	}
 
 	printf("Minutos: ");
-	scanf("%d", &minuto_final);
+	scanf("%d", & minuto_final);
 	while (!(minuto_final >= 0 && minuto_final < 60)) {
 		printf("Valor invalido, tente novamente: ");
 		scanf("%d", & minuto_final);
@@ -310,7 +310,7 @@ void ex8(){
 
 }
 
-void ex9(){
+void ex9() {
 
 	print("\n------------------------------\n");
 
@@ -318,38 +318,38 @@ void ex9(){
 	float salario_atual;
 
 	printf("Informe o codigo de cargo do funcionario: ");
-	scanf("%d", &cargo);
+	scanf("%d", & cargo);
 	while (!(cargo > 0 && cargo < 6)) {
 		printf("Valor invalido, tente novamente: ");
-		scanf("%d", &cargo);
+		scanf("%d", & cargo);
 	}
 
 	printf("Informe o salario atual do funcionario: ");
-	scanf("%f", &salario_atual);
+	scanf("%f", & salario_atual);
 	while (!(salario_atual > 0)) {
 		printf("Valor invalido, tente novamente: ");
-		scanf("%f", &salario_atual);
+		scanf("%f", & salario_atual);
 	}
 
 	float aumento, salario_novo;
 
-	if (cargo == 1){
+	if (cargo == 1) {
 		aumento = .5 * salario_atual;
 		salario_novo = salario_atual + aumento;
 		printf("\nCargo: Escrituario\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
-	} else if (cargo == 2){
+	} else if (cargo == 2) {
 		aumento = .35 * salario_atual;
 		salario_novo = salario_atual + aumento;
 		printf("\nCargo: Secretario\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
-	} else if (cargo == 3){
+	} else if (cargo == 3) {
 		aumento = .2 * salario_atual;
 		salario_novo = salario_atual + aumento;
 		printf("\nCargo: Caixa\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
-	} else if (cargo == 4){
+	} else if (cargo == 4) {
 		aumento = .1 * salario_atual;
 		salario_novo = salario_atual + aumento;
 		printf("\nCargo: Gerente\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
-	} else if (cargo == 5){
+	} else if (cargo == 5) {
 		aumento = .0 * salario_atual;
 		salario_novo = salario_atual + aumento;
 		printf("\nCargo: Diretor\nAumento: R$%.2f\nNovo salario: R$%.2f\n", aumento, salario_novo);
@@ -359,24 +359,24 @@ void ex9(){
 
 }
 
-void ex10(){
+void ex10() {
 
 	print("\n------------------------------\n");
 
 	float peso, altura;
 
 	printf("Informe o peso: ");
-	scanf("%f", &peso);
+	scanf("%f", & peso);
 	while (!(peso > 0)) {
 		printf("Valor invalido, tente novamente: ");
-		scanf("%f", &peso);
+		scanf("%f", & peso);
 	}
 
 	printf("Informe a altura: ");
-	scanf("%f", &altura);
+	scanf("%f", & altura);
 	while (!(altura > 0)) {
 		printf("Valor invalido, tente novamente: ");
-		scanf("%f", &altura);
+		scanf("%f", & altura);
 	}
 
 	int grupo = 0;
