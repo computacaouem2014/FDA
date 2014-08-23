@@ -193,7 +193,7 @@ char opc;
                     printf("Gerente selecionado.\nDigite o salario atual: ");
                     float salg, contag;
                     scanf("%f", &salg);
-                    contag = salg*0.5;
+                    contag = salg*0.1;
                     printf("O cargo Gerente possui salario de R$%.2f e tera um aumento de R$%.2f sendo o salario final de R$%.2f\n", salg, contag, contag+salg);
                     }else{if(opc == '5'){
                         printf("Diretor selecionado.\nInfelizmente o cargo selecionado nao possui aumento.");
@@ -214,7 +214,7 @@ void ex10(){
     scanf("%f", &peso);
     printf("Informe a sua altura: ");
     scanf("%f", &alt);
-    if(alt<=1.2)
+    if(alt<1.2)
     {if(peso<=60){
         printf("Sua classificacao e A");
         }else{if(peso<=90){
@@ -224,7 +224,7 @@ void ex10(){
             }
         }
     }
-    if(alt<=1.7)
+    if(alt<1.7)
     {if(peso<=60){
         printf("Sua classificacao e B");
         }else{if(peso<=90){
@@ -234,7 +234,7 @@ void ex10(){
             }
         }
     }
-    if(alt>1.7)
+    if(alt>=1.7)
     {if(peso<=60){
         printf("Sua classificacao e C");
         }else{if(peso<=90){
