@@ -92,6 +92,13 @@ void ex3() {
 	// Creditos: Wikipedia.
 	// Ja dizia alguem muito inteligente: "pra que reinventar a roda?"
 
+	/*
+	if (leap == 1)
+	    printf("O ano %04d e bissexto.\n", ano);
+	else
+	    printf("O ano %04d nao e bissexto.\n", ano);
+	 */
+
 	printf("O ano %04d %se bissexto.\n", ano, leap == 1 ? "" : "nao ");
 
 	print("\n------------------------------\n");
@@ -251,6 +258,15 @@ void ex7() {
 	}
 
 	ph = -1 * log10(ch);
+
+	/*
+	if (ph > 7)
+	    printf("O pH e: %.2f (basico).", ph);
+	else if (ph == 7)
+	    printf("O pH e: %.2f (neutro).", ph);
+	else
+	    printf("O pH e: %.2f (acido).", ph);
+	 */
 
 	printf("O pH e: %.2f (%s).", ph, ph > 7 ? "basico" : (ph == 7 ? "neutro" : "acido"));
 
