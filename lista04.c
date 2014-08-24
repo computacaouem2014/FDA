@@ -39,7 +39,7 @@ void ex1() {
 
 	float resultado = x / (a + b);
 
-	printf("Resultado: %.2f\n", resultado);
+	printf("Resultado: %.2f\n", pow(resultado,0.5);
 
 	print("\n------------------------------\n");
 
