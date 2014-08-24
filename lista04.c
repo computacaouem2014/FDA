@@ -40,7 +40,7 @@ void ex1() {
 	float resultado = sqrt((float) x / (a + b));
 	// float resultado = pow((float) x / (a + b), 0.5);
 
-	printf("Resultado: %.2f\n", resultado;
+	printf("Resultado: %.2f\n", resultado);
 
 	print("\n------------------------------\n");
 
