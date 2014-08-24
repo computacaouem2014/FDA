@@ -128,7 +128,7 @@ void ex5() {
 
 	print("\n------------------------------\n");
 
-	int a, b, c, retangulo;
+	int a, b, c, retangulo = 0;
 
 	while (!retangulo) {
 		print("Informe a medida do lado a:");
@@ -142,7 +142,6 @@ void ex5() {
 		print("Informe a medida do lado b:");
 		scanf("%d", & b);
 
-
 		while (!(b > 0)) {
 			print("Valor invalido, tente novamente:");
 			scanf("%d", & b);
@@ -155,6 +154,7 @@ void ex5() {
 			print("Valor invalido, tente novamente:");
 			scanf("%d", & c);
 		}
+		
 		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
 			retangulo = 1;
 		} else {
