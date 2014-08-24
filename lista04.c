@@ -128,39 +128,30 @@ void ex5() {
 
 	print("\n------------------------------\n");
 
-	int a, b, c, retangulo = 0;
+	int a, b, c;
 
-	while (!retangulo) {
-		print("Informe a medida do lado a:");
+	print("Informe a medida do lado a:");
+	scanf("%d", & a);
+
+	while (!(a > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & a);
+	}
+	
+	print("Informe a medida do lado b:");
+	scanf("%d", & b);
 
-		while (!(a > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & a);
-		}
-
-		print("Informe a medida do lado b:");
+	while (!(b > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & b);
+	}
 
-		while (!(b > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & b);
-		}
+	print("Informe a medida do lado c:");
+	scanf("%d", & c);
 
-		print("Informe a medida do lado c:");
+	while (!(c > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & c);
-
-		while (!(c > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & c);
-		}
-		
-		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
-			retangulo = 1;
-		} else {
-			printf("Essas medidas nao formam um triangulo retangulo.");
-			printf("Por favor tente novamente.");
-		}
 	}
 
 	float s = (a + b + c) / 2.;
