@@ -222,9 +222,9 @@ void ex6() {
 				scanf("%d", & altura);
 			}
 
-			int area = base * altura * largura;
+			int volume = base * altura * largura;
 
-			printf("O volume do paralelepipedo (%dx%dx%d) e: %d\n u.v.", base, largura, altura, area);
+			printf("O volume do paralelepipedo (%dx%dx%d) e: %d\n u.v.", base, largura, altura, volume);
 		} else {
 			print("Opcao invalida!");
 		}
