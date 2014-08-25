@@ -214,7 +214,7 @@ void ex6() {
 				scanf("%d", & largura);
 			}
 
-			print("Informe a largura do paralelepipedo:");
+			print("Informe a altura do paralelepipedo:");
 			scanf("%d", & altura);
 
 			while (!(altura > 0)) {
