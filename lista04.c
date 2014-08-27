@@ -268,7 +268,7 @@ void ex7() {
 	    printf("O pH e: %.2f (acido).", ph);
 	 */
 
-	printf("O pH e: %.2f (%s).", ph, ph > 7 ? "basico" : (ph == 7 ? "neutro" : "acido"));
+	printf("O pH e: %.2f (%s).\n", ph, ph > 7 ? "basico" : (ph == 7 ? "neutro" : "acido"));
 
 	print("\n------------------------------\n");
 
@@ -418,6 +418,15 @@ int main() {
 
 	print("LISTA DE EXERCICIOS DE FDA - 04");
 
+	ex1();
+	ex2();
+	ex3();
+	ex4();
+	ex5();
+	ex6();
+	ex7();
+	ex8();
+	ex9();
 	ex10();
 
 	getchar();
