@@ -37,7 +37,8 @@ void ex1() {
 	}
 	 */
 
-	float resultado = x / (a + b);
+	float resultado = sqrt((float) x / (a + b));
+	// float resultado = pow((float) x / (a + b), 0.5);
 
 	printf("Resultado: %.2f\n", resultado);
 
@@ -127,39 +128,30 @@ void ex5() {
 
 	print("\n------------------------------\n");
 
-	int a, b, c, retangulo;
+	int a, b, c;
 
-	while (!retangulo) {
-		print("Informe a medida do lado a:");
+	print("Informe a medida do lado a:");
+	scanf("%d", & a);
+
+	while (!(a > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & a);
+	}
+	
+	print("Informe a medida do lado b:");
+	scanf("%d", & b);
 
-		while (!(a > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & a);
-		}
-
-		print("Informe a medida do lado b:");
+	while (!(b > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & b);
+	}
 
+	print("Informe a medida do lado c:");
+	scanf("%d", & c);
 
-		while (!(b > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & b);
-		}
-
-		print("Informe a medida do lado c:");
+	while (!(c > 0)) {
+		print("Valor invalido, tente novamente:");
 		scanf("%d", & c);
-
-		while (!(c > 0)) {
-			print("Valor invalido, tente novamente:");
-			scanf("%d", & c);
-		}
-		if ((a * a == b * b + c * c) || (b * b == a * a + c * c) || (c * c == a * a + b * b)) {
-			retangulo = 1;
-		} else {
-			printf("Essas medidas nao formam um triangulo retangulo.");
-			printf("Por favor tente novamente.");
-		}
 	}
 
 	float s = (a + b + c) / 2.;
@@ -222,7 +214,7 @@ void ex6() {
 				scanf("%d", & largura);
 			}
 
-			print("Informe a largura do paralelepipedo:");
+			print("Informe a altura do paralelepipedo:");
 			scanf("%d", & altura);
 
 			while (!(altura > 0)) {
@@ -230,9 +222,9 @@ void ex6() {
 				scanf("%d", & altura);
 			}
 
-			int area = base * altura * largura;
+			int volume = base * altura * largura;
 
-			printf("O volume do paralelepipedo (%dx%dx%d) e: %d\n u.v.", base, largura, altura, area);
+			printf("O volume do paralelepipedo (%dx%dx%d) e: %d\n u.v.", base, largura, altura, volume);
 		} else {
 			print("Opcao invalida!");
 		}
