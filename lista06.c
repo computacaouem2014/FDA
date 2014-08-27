@@ -152,7 +152,7 @@ int main() {
 	printf("LISTA DE EXERCICIOS DE FDA - 06\n");
 	int o=0;
 	do{
-		print("Qual exercicio voce quer ver? [1-5; 0 pra sair]");
+		printf("Qual exercicio voce quer ver? [1-5; 0 pra sair]\n");
 		scanf("%d", &o);
 	
 		switch(o){
