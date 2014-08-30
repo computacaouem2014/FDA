@@ -24,7 +24,7 @@ void ex1() {
 
 void ex2() {
 	int prime(int n) {
-		if (n == 2 || n == 3) return 1; // porque dois e tres sao primos
+		if (n == 2 || n == 3 || n == 5) return 1; // porque dois e tres sao primos
 		if (!((n % 10 == 1) || (n % 10 == 3) || (n % 10 == 7) || (n % 10 == 9)) || n) return 0;
 		/*
 		evita cálculos a toa pois os números primos (exceto o 2) acabam em
