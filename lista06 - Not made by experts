@@ -127,3 +127,20 @@ void ex5(){
     //OBS. Eu considerei que as crianças abaixo de 24 meses de vida faleceram já que o professor não foi claro nessa parte!
     
 }
+
+int main() {
+printf("LISTA DE EXERCICIOS DE FDA - 06\n");
+int o=0;
+do{
+printf("Qual exercicio voce quer ver? [1-5; 0 pra sair]: ");
+scanf("%d", &o);
+switch(o){
+case 1: ex1(); break;
+case 2: ex2(); break;
+case 3: ex3(); break;
+case 4: ex4(); break;
+case 5: ex5(); break;
+default: break;
+}
+}while(o!=0);
+return 0;}
