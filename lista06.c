@@ -7,6 +7,8 @@
 #define MIN_GRAUS 40
 #define MAX_GRAUS 70
 
+//by @derevandal
+
 void ex1(){
 	int x, y, soma=0, i;
 	printf("Informe o primeiro numero: ");
@@ -16,15 +18,13 @@ void ex1(){
 	if(x>y){
 		// decrescente
 		for(i=y; i<=x; i++){
-			if(i%2==0) soma+=i;
+			if(i%2 == 0)
+				soma++;
 		}
 		printf("[Descrescente] Quantidade de numeros pares de %d ate %d: %d\n", x, y, soma);
 	} else if(x<y) {
 		// crescente
-		for(i=x; i<=y; i++){
-			soma+=i;
-		}
-		printf("[Crescente] Media do intervalo de %d ate %d: %.2f\n", x, y, (float)soma/(i-1));
+		printf("[Crescente] Media do intervalo de %d ate %d: %.2f\n", x, y, x+y/2.);
 	} else {
 		printf("[Iguais] Os numeros inforados sao iguais.\n");
 	}
@@ -51,23 +51,23 @@ void ex2(){
 }
 
 void ex3(){
-	int pessoa[MAX_PEOPLE], sexo[MAX_PEOPLE], c, d, temp_s, temp_p, nsexo[2];
-	float altura[MAX_PEOPLE], temp_a, med_altura=0;
+	int pessoa[MAX_PEOPLE], sexo[MAX_PEOPLE], c, d, temp_s, temp_p, nsexo[2] = {0};
+	float altura[MAX_PEOPLE], temp_a, soma[2] = {0}, med_altura[2] = {0};
 	
 	srand((unsigned int)time(NULL));
 
     for (int i=0;i<MAX_PEOPLE;i++){
-    	altura[i] = ((float)rand()/(float)(RAND_MAX)) * 2.;
-    	sexo[i] = ((float)rand()/(float)(RAND_MAX)) * 4.<2 ? 0 : 1;
-    	if(sexo[i] == 1) nsexo[1]++;
-    	else {
-    		med_altura += altura[i];
-    		nsexo[0]++;
-    	}
+    	altura[i] = ((float)rand()/(RAND_MAX)) * 2.;
+    	sexo[i] = rand()%2;
+    	nsexo[sexo[i]]++;
+    	soma[sexo[i]] += altura[i];
     	pessoa[i] = i;
+    	//printf("| %-10d || %-10.2f || [%d]%-10d || %-10.2f |\n", sexo[i], altura[i], sexo[i], nsexo[sexo[i]], soma[sexo[i]]);
     }
     
-    med_altura /= nsexo[0];
+    med_altura[0] = (float)soma[0]/nsexo[0];
+    
+    //printf("MA: %f\nNS0: %d\n NS1: %d\n", med_altura[0], nsexo[0], nsexo[1]);
     
     for (c = 0 ; c < ( MAX_PEOPLE - 1 ); c++) {
 		for (d = 0 ; d < MAX_PEOPLE - c - 1; d++){
@@ -84,22 +84,23 @@ void ex3(){
 	    	}
 		}
 	}
+	printf(" --------------------------------------- \n");
 	printf("| %-10s || %-10s || %10s |\n", "PESSOA", "ALTURA", "SEXO");
 	printf(" --------------------------------------- \n");
 	for(int i=0; i<MAX_PEOPLE; i++){
 		printf("| %-10d || %-10f || %10d |\n", pessoa[i], altura[i], sexo[i]);
 	}
 	printf(" --------------------------------------- \n");
-	printf("1)\t Maior do grupo: %d [%.2f]\n", pessoa[MAX_PEOPLE-1], altura[MAX_PEOPLE-1]);
-	printf("2)\t Menor do grupo: %d [%.2f]\n", pessoa[0], altura[0]);
-	printf("3)\t Média de altura das mulheres: %.2f\n", med_altura);
-	printf("4)\t Número de homens: %d\n", nsexo[1]);
-	printf("5)\t Sexo da pessoa %d, a mais alta: %s\n", pessoa[MAX_PEOPLE-1], sexo[MAX_PEOPLE-1]==1 ? "Masculino" : "Feminino");
-	
+	printf("1) Maior do grupo:\t\t\t%d [%.2f]\n", pessoa[MAX_PEOPLE-1], altura[MAX_PEOPLE-1]);
+	printf("2) Menor do grupo:\t\t\t%d [%.2f]\n", pessoa[0], altura[0]);
+	printf("3) Média de altura das mulheres:\t%.2f\n", med_altura[0]);
+	printf("4) Número de homens:\t\t\t%d\n", nsexo[1]);
+	printf("5) Sexo da pessoa %d, a mais alta:\t%s\n", pessoa[MAX_PEOPLE-1], sexo[MAX_PEOPLE-1]==1 ? "Masculino" : "Feminino");
 		
 }
 
 void ex4(){
+	printf(" ------------------------- \n");
 	printf("| %-10s || %-10s |\n", "Fahrenheit", "Celsius");
 	printf(" ------------------------- \n");
 	for(int i=MIN_GRAUS; i<=MAX_GRAUS; i++){
@@ -152,7 +153,7 @@ int main() {
 	printf("LISTA DE EXERCICIOS DE FDA - 06\n");
 	int o=0;
 	do{
-		printf("Qual exercicio voce quer ver? [1-5; 0 pra sair]\n");
+		printf("Qual exercicio voce quer ver? [1-5; 0 pra sair] ");
 		scanf("%d", &o);
 	
 		switch(o){
@@ -164,5 +165,4 @@ int main() {
 			default: break;
 		}
 	}while(o!=0);
-	return 0;
-}
+	return 0;}
