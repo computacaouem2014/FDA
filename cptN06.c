@@ -11,7 +11,7 @@ void ex1() {
 	scanf("%d", & num2);
 	if (num1 < num2) {
 		float media = (num1 + num2) / 2.;
-		printf("Media dos numeros entre %d e %d = %d", num1, num2, media);
+		printf("Media dos numeros entre %d e %d = %.2f", num1, num2, media);
 	} else if (num1 > num2) {
 		int count;
 		for (int i = num2; num2 <= num1; i++)
