@@ -6,9 +6,9 @@
 void ex1() {
 	int num1, num2;
 	printf("Informe o primeiro numero: ");
-	scanf("%d", % num1);
+	scanf("%d", & num1);
 	printf("Informe o segundo numero: ");
-	scanf("%d", % num2);
+	scanf("%d", & num2);
 	if (num1 < num2) {
 		int media = (num1 + num2) / 2;
 		printf("Media dos numeros entre %d e %d = %d", num1, num2, media);
