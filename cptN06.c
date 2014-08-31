@@ -96,7 +96,7 @@ void ex4() {
 	}
 	printf("|%12s\t|\t%-12s|", "CELSIUS", "FAHRENHEIT");
 	for (int i = 40; i < 70; i++) {
-		printf("|%10d\t|\t%-10d|", i, ctof(i));
+		printf("|%10d\t|\t%-10.f|", i, ctof(i));
 	}
 }
 
