@@ -13,9 +13,8 @@ void ex1() {
 		float media = (num1 + num2) / 2.;
 		printf("Media dos numeros entre %d e %d = %.2f", num1, num2, media);
 	} else if (num1 > num2) {
-		int count;
-		for (int i = num2; num2 <= num1; i++)
-			if (i % 2 == 0) count += 1;
+		int count = (num1 - num2) / 2;
+		if (num1 % 2 != 0 || num2 % != 0) count++;
 		printf("Quantidade de numeros pares entre %d e %d = %d", num2, num1, count);
 	} else {
 		printf("Voce informou dois numeros iguais.");
