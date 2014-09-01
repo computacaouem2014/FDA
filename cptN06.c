@@ -88,12 +88,8 @@ void ex3() {
 }
 
 void ex4() {
-	float ctof(float c) {
-		return (c + 32) * (9. / 5);
-	}
-	float ftoc(float f) {
-		return (f - 32) * (5. / 9);
-	}
+	float ctof(float c) return (c + 32) * (9. / 5);
+	float ftoc(float f) return (f - 32) * (5. / 9);
 	printf("|%12s\t|\t%-12s|", "CELSIUS", "FAHRENHEIT");
 	for (int i = 40; i < 70; i++) {
 		printf("|%10d\t|\t%-10d|", i, ctof(i));
