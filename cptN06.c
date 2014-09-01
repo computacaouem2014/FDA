@@ -84,11 +84,11 @@ int main() {
 
 	srand(time(NULL));
 
-	//ex1();
-	//ex2();
-	//ex3();
+	ex1();
+	ex2();
+	ex3();
 	ex4();
-	//ex5();
+	ex5();
 
 	getchar();
 	getchar();
