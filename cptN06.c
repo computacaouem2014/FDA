@@ -70,7 +70,7 @@ void ex4() {
 		return (f - 32) * (5. / 9);
 	}
 	printf("|%12s|%12s  ||  %12s|%12s|\n", "CELSIUS", "FAHRENHEIT", "FAHRENHEIT", "CELSIUS");
-	for (float i = 40; i < 70; i++) {
+	for (float i = 40; i <= 70; i++) {
 		printf("|%12.2f|%12.2f  ||  %12.2f|%12.2f|\n", i, ctof(i), i, ftoc(i));
 	}
 }
