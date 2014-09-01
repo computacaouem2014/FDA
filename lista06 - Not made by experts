@@ -1,0 +1,141 @@
+#include <stdio.h>
+
+void ex1(){
+    int a, b;
+    printf("Digite dois numeros. De espaco entre eles: ");
+    scanf("%d %d", &a, &b);
+    if(b>a){
+        int k, med, soma=0, n=0;
+        float conta;
+        for(k=a;k<=b;k++){
+            soma=soma+k;
+        }
+            conta = soma/(k-1);
+        printf("A media do intervalo entre %d a %d e %.2f\n", a, b, conta);
+    }else{if(b<a){
+                int i, npar=0;
+                for(i=b;i<=a;i++){
+                    if(i%2==0) npar += 1;
+                }
+                printf("A quantidade de numeros pares entre %d a %d e de: %d\n",a, b, npar);
+    }else{if(a==b){printf("Os numeros sao iguais.\n");
+    }
+    }
+    }
+}
+
+void ex2(){
+    int num, primo=0, k;
+    printf("Digite um numero para saber se e primo: ");
+    scanf("%d", &num);
+    while(num<=0){
+       printf("Por favor, digite um numeo maior que 0: ");
+        scanf("%d", &num);
+    }
+    if(num==1){
+        printf("O numero 1 nao e primo!\n");
+        return 0;
+    }
+    for(k = 1;k<= num/2; k++){
+        if(num%num == 0)
+            primo++;
+    }
+    if(primo == 2)
+        printf("O numero %d e primo!\n", num);
+    else
+        printf("O numero %d NAO e primo!\n", num);
+}
+
+void ex3(){
+
+    char sex, sexalt;
+    float alt=0, falt=0, mais_alto=0, mais_baixo=5, mediaf;
+    int cont=0, maltf, numm=0, faltf=0;
+    while(cont<15){
+        printf("\nDigite o sexo da pessoa. F para Feminino e M para Masculino: ");
+        scanf("%s", &sex);
+        printf("\nDigite a altura da pessoa: ");
+        scanf("%f", &alt);
+        if(sex=='f'|| sex == 'F'){
+            falt = alt+falt;
+            faltf++;
+        }else{if(sex=='m'||sex == 'M'){
+                numm++;
+        }
+    }
+        cont++;
+        if(alt>mais_alto){
+        mais_alto = alt;
+        sexalt = sex;
+        }
+        if(alt<mais_baixo)
+        mais_baixo = alt;
+}
+    mediaf = falt/faltf;
+    printf("\nO numero de Homem(ns) e de %d\n", numm);
+    printf("A media das mulheres e %.2f\n", mediaf);
+    printf("A pessoa com maior altura mede: %.2f e e do sexo %c \n", mais_alto, sexalt);
+    printf("A pessoa com menor altura mede: %.2f\n", mais_baixo);
+}
+
+
+void ex4(){
+    float c, f, c1, f1;
+    for (f=40, c1=40; f<=70, c1<=70; f++, c1++){
+        c= (f-32)*(5.0/9.0);
+        f1= (c1*1.8)+32;
+        printf("%.0f%cF = %.1f\%cC.\t%.0f%cC = %.1f%cF.\n", f, 248, c, 248, c1, 248, f1, 248);
+  }
+}
+
+void ex5(){
+    char sex;
+    int nc, tdv, k=0, nmortos=0, fmortos=0, mmortos=0;
+    float pm, pf, pgeral;
+    printf("Informe o numero de criancas nascidas no periodo: ");
+    scanf("%d", &nc);
+    while(k != nc){
+        printf("Informe o sexo da crianca. M para masculino e F para feminino: ");
+        scanf("%s", &sex);
+        printf("Informe o tempo de vida da crianca em meses: ");
+        scanf("%d", &tdv);
+        if(tdv<24){
+                nmortos++;
+            }
+        else{
+        if(sex == 'f'||sex == 'F'){
+            fmortos++;
+        }else{if(sex == 'm'|| sex == 'M'){
+            mmortos++;
+            }
+        }
+    }
+        k=k+1;
+}
+    pgeral = (nmortos*1./nc)*100;//foi multiplicado por *1. para corrifir o problema de multiplicar int por float!!
+    pm = (mmortos*1./nc)*100;
+    pf = (fmortos*1./nc)*100;
+    printf("A porcentagem de crianas femininas que morrem e de %.2f%c\n", pf, 37);
+    printf("A porcentagem de crianas masculina que morrem e de %.2f%c\n", pm, 37);
+    printf("A porcentagem de crianas que morrem antes de 24 meses e de %.2f%c\n", pgeral, 37);
+    
+    //OBS. Eu considerei que as crianças abaixo de 24 meses de vida faleceram já que o professor não foi claro nessa parte!
+    
+}
+
+int main() {
+printf("LISTA DE EXERCICIOS DE FDA - 06\n");
+int o=0;
+do{
+printf("Qual exercicio voce quer ver? [1-5; 0 pra sair]: ");
+scanf("%d", &o);
+switch(o){
+case 1: ex1(); break;
+case 2: ex2(); break;
+case 3: ex3(); break;
+case 4: ex4(); break;
+case 5: ex5(); break;
+default: break;
+}
+}while(o!=0);
+return 0;}
