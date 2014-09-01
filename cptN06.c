@@ -45,16 +45,12 @@ void ex3() {
 	}
 	int maior = 0, menor = 0, homens = 0, mulheres = 0;
 	float soma = 0;
-	for (int i = 1; i < 15; i++) {
-		if (altura[i] > altura[maior]) {
-			maior = i;
-		}
-		if (altura[menor] > altura[i]) {
-			menor = i;
-		}
+	for (int i = 0; i < 15; i++) {
+		if (altura[i] > altura[maior]) maior = i;
+		if (altura[menor] > altura[i]) menor = i;
 		if (sexo[i] == 0) homens++;
 		else {
-			soma = altura[i];
+			soma += altura[i];
 			mulheres++;
 		}
 	}
