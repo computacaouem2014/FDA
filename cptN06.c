@@ -23,31 +23,11 @@ void ex1() {
 
 void ex2() {
 	int prime(int n) {
-		if (n == 2 || n == 3 || n == 5) return 1; // porque dois e tres sao primos
-		if (!((n % 10 == 1) || (n % 10 == 3) || (n % 10 == 7) || (n % 10 == 9)) || n) return 0;
-		/*
-		evita cálculos a toa pois os números primos (exceto o 2) acabam em
-		1, 3, 7 ou 9 pois, se acaba em 0, 2, 4, 6, 8 o número é
-		divisível por 2 e se acaba em 5 e divisível por 5
-		e ainda checamos se o numero é 1, pois 1 também não é primo.
-		 */
-		printf("\tCalculando...\n");
-		for (int i = 3, l = sqrt(n); i <= l; i += 2)
-			if (n % i == 0) return 0;
-		// Se o número acaba em 1, 3, 7, 9 e não é o 1 então vamos calcular
-		// seus divisores. No caso de encontrarmos ao menos 1 divisor, já
-		// podemos retornar falso (0) e começaremos no 3 pois se chegamos
-		// a essa parte, os números acabam ou em 1, 3, 7 ou 9 então não
-		// temos múltiplos de 2, por não termos múltiplos de 2, então
-		// podemos ignorar todos os pares na checagem de divisores, por
-		// isso aumentaremos o i de 2 em 2. Se não houver divisores
-		// retornaremos True (1) pois o número é primo.
-		// De acordo com uma das aulas de MD2, os divisores de um número
-		// estão entre 1 e a raiz quadrada de um número. Por isso o limite
-		// do for loop será a raiz do número. Só a calcularemos uma vez
-		// e colocaremos o resultado em l, pois a função de raiz custa
-		// caro em termos de processamento, ou seja não seria bom chama-la
-		// a cada loop do for.
+		if (n < 3) return n > 1;
+		if (n % 2 == 0 || n % 3 == 0) return 1;
+		for (int i = 5, l = sqrt(n); i < l; i += 6){
+			if (n % i == 0 || n % (i + 2) == 0) return 0;
+		}
 		return 1;
 	}
 	int num;
