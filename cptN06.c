@@ -10,7 +10,7 @@ void ex1() {
 	printf("Informe o segundo numero: ");
 	scanf("%d", & num2);
 	if (num1 < num2) {
-		float media = (num1 + num2) / 2.;
+		float media = (float)(num1 + num2) / 2.;
 		printf("Media dos numeros entre %d e %d = %.2f", num1, num2, media);
 	} else if (num1 > num2) {
 		int count = (num1 - num2) / 2;
