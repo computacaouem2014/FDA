@@ -83,13 +83,76 @@ void ex5() {
 	printf("Sequencia: %.8f", seq);
 }
 
+void ex6() {
+	int num = 2, denum = 1, n, i = 0;
+	float termo;
+	printf("Calcular os termos ate n=");
+	scanf("%d", & n);
+	do {
+		termo = (float) num / denum;
+		printf("O termo n%d e: %.8f\n", i + 1, termo);
+		num += denum;
+		denum = num - denum;
+		i++;
+	} while (i < n);
+}
+
+void ex7() {
+	int n, p, x = 1, y = 2, z = 3;
+	printf("Informe um numero: ");
+	scanf("%d", & n);
+	while (1) {
+		p = ++x * ++y * ++z;
+		if (p == n) {
+			printf("O numero %d e triangular (%d x %d x %d).\n", n, x, y , z);
+			break;
+		} else if (p > n) {
+			printf("O numero %d nao e triangular.\n", n);
+			break;
+		}
+	}
+}
+
+void ex8() {
+	int n, maior = 0;
+	while (n != -9999) {
+		printf("Informe um numero [-9999 para encerrar]: ");
+		scanf("%d", & n);
+		if (n > maior) maior = n;
+	}
+	printf("O maior dentre os numeros informados e: %d", maior);
+}
+
+void ex9() {
+	int conta, neg = 0, pos = 0;
+	float saldo;
+	while (1) {
+		printf("Informe o numero da conta [negativo para encerrar]: ");
+		scanf("%d", & conta);
+		if (conta < 0) break;
+		printf("Informe o saldo: ");
+		scanf("%f", & saldo);
+		if (saldo >= 0) {
+			printf("Conta: %d\n\tSaldo:%.2f\n\tPositivo\n", conta, saldo);
+			pos++;
+		} else {
+			printf("Conta: %d\n\tSaldo:%.2f\n\tNegativo\n", conta, saldo);
+			neg++;
+		}
+	}
+	printf("Percentual de saldos negativos: %.2f%%\n", (float)neg / (pos + neg) * 100);
+}
+
+void ex10() {
+}
+
 int main() {
 
 	printf("LISTA DE FDA 07\n");
 
 	srand(time(NULL));
 
-	ex5();
+	ex9();
 
 	getchar();
 	getchar();
