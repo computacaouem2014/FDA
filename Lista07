@@ -1,0 +1,224 @@
+#include<stdio.h>
+
+void ex1(){
+    char produto[30], controlen;
+    int produz, vendida, estoque, controleq=0;
+    while(produto != '0'){
+        printf("\nDigite 0 caso queira encerrar o programa.\n");
+        printf("Digite o nome do produto: ");
+        scanf("%s", &produto);
+        printf("Informe a quantidade produzida: ");
+        scanf("%d", &produz);
+        printf("Informe a quantidade vendida: ");
+        scanf("%d", &vendida);
+        estoque = produz - vendida;
+        printf("\nProduto:\tProduzido:\tVendido:\n");
+        printf("*****************************************************************\n");
+        printf("%s\t\t%d\t\t%d", produto, produz, vendida);
+        if(estoque <= 0)    printf("\t -Estoque vazio!\n");
+        else if(estoque<50)  printf("\t -Estoque abaixo de 50!\n");
+        else printf("\n");
+        if(estoque>controleq){
+            controleq = estoque;
+            controlen = produto;
+        }
+    }
+    printf("O maior estoque possui %d unidade com o nome de %s", controleq, controlen);
+}
+
+void ex2(){
+    int idade, cont1=0, cont2=0;
+    while(idade!=0){
+        printf("\nPara sair do programa, digite 0!\n");
+        printf("Digite uma idade: ");
+        scanf("%d", &idade);
+        if(idade<21 && idade !=0)    cont1++;
+        else if(idade>50)    cont2++;
+
+    }
+    printf("\nO numero total de pessoas com menos de 21 anos e %d",cont1);
+    printf("\nO numero total de pessoas com mais de 50 anos e %d\n", cont2);
+}
+
+void ex3(){
+    int ano=0;
+    float paisa=5000000, paisb=7000000, natala, natalb;
+    while(paisa<paisb){
+        natala=paisa*0.03;
+        paisa=natala+paisa;
+        natalb=paisb*0.02;
+        paisb=natalb+paisb;
+        ano++;
+    }
+    printf("O tempo necessario para o pais A ser maior que pais B e de %d anos\n", ano);
+}
+
+void ex4(){
+    int k, l=0;
+    printf("Digite o numero de residencia: ");
+    scanf("%d", &k);
+    int consumidor[k], codigo[k], c=0, a=0, casa=0, comercio=0, industrial=0;
+    float quantidade[k], consumo_total, pagar[k], consumot_res=0, consumot_comer=0, consumot_ind=0;
+    while(a != k || consumidor == 0){
+        printf("\nDigite o numero do consumidor: ");
+        scanf("%d", &consumidor[a]);
+        printf("Informe a quantidade consumida em Kwh: ");
+        scanf("%f", &quantidade[a]);
+        printf("Digite o codigo do consumidor (1:Residencial 2:Comercial 3:Industrial): ");
+        scanf("%d", &codigo[a]);
+        printf("\n");
+        if(codigo <=1  && codigo>=3){
+            printf("Digite o codigo do consumidor (1:Residencial 2:Comercial 3:Industrial): ");
+            scanf("%d", &codigo[a]);
+        }
+        if(codigo[a] == 1){
+            pagar[a]=quantidade[a]*0.5;
+            consumot_res = quantidade[a]+ consumot_res;
+            casa++;
+        }else{if(codigo[a] == 2){
+             pagar[a]=quantidade[a]*0.7;
+             consumot_comer= quantidade[a]+ consumot_comer;
+             comercio++;
+        }else{if(codigo[a] == 3){
+                pagar[a]=quantidade[a]*1.2;
+                consumot_ind = quantidade[a]+ consumot_ind;
+                industrial++;
+                }
+            }
+        }
+        a++;
+    }
+    printf("\nConsumidor:\t\tConsumo:\t\tPreco\n");
+    printf("*****************************************************\n");
+    while(l != k){
+        printf("%.4d\t\t%15.2f\t\t%13.2f\n",consumidor[l], quantidade[l],pagar[l]);
+        l++;
+    }
+    printf("\nConsumo total Residencial: %.2f\n", consumot_res);
+    printf("Consumo total Comercial: %.2f\n", consumot_comer);
+    printf("Consumo total Industrial: %.2f\n", consumot_ind);
+    printf("Consumo medio Residencial: %.2f\n", consumot_res/casa);
+    printf("Consumo medio Comercial: %.2f\n", consumot_comer/comercio);
+}
+
+void ex6(){
+    int n=0.;
+    float k=0, conta=0;
+    while(n!=100){
+        n++;
+        k=(1./n);
+        if(n%2 == 0)  k=-k;
+        conta=k+conta;
+    }
+    printf("A soma da sequencia e %f\n", conta);
+}
+
+void ex7(){
+    int numer = 2, denom = 1, aux=0, n=0, a=0;
+    printf("Digite o valor de n: ");
+    scanf("%d", &n);
+    while(a != n){
+        printf("%d/%d\n",numer, denom);
+        numer=numer+denom;
+        denom=numer-denom;
+    a++;
+    }
+}
+
+void ex8(){
+    int i, num;
+  printf("Digite o valor de n: ");
+  scanf("%d",&num);
+  for (i = 1; i*(i+1)*(i+2) < num; i++);
+    if (i*(i+1)*(i+2) == num)
+        printf("%d e e triangulo pois sua multiplicacao e %d*%d*%d\n", num, i, i+1, i+2);
+    else
+        printf("%d nao e triangular\n", num);
+}
+
+void ex9(){
+    int num, maior=0;
+    while(num != -9999){
+        printf("\nDigite um numero: ");
+        scanf("%d", &num);
+        if(num>maior)   maior = num;
+    }
+    printf("O maior numero e %d\n", maior);
+}
+
+void ex10(){
+    int co, p=0;
+    printf("Informe a quantidade de contas: ");
+    scanf("%d", &co);
+    int nconta[co], k=0;
+    float saldo[co], negativo;
+    while(k != co || nconta[k]<0){
+        printf("\nDigite o numero da conta: ");
+        scanf("%d", &nconta[k]);
+        printf("Digite o saldo: ");
+        scanf("%f", &saldo[k]);
+        if(saldo[k]<0)  negativo++;
+        k++;
+    }
+    printf("\nN. da Conta:\tSaldo:\t\tNegativo:\n");
+    printf("**********************************************\n");
+    while(p != co){
+        printf("%d\t\t%5.2f\t\t",nconta[p],saldo[p]);
+        if(saldo[p]<0)  printf("Sim\n");
+        else printf("Nao\n");
+        p++;
+    }
+    printf("\nO de contas negativo e %.2f%c\n", (negativo/k)*100, 37);
+}
+
+void ex11(){
+        char ncliente[20][20];
+    int cliente[10000], negativo=0, k=0, n=0;
+    float saldo[10000], sagencia=0;
+    while(k != 10000){
+        printf("\nDigite o numero da conta: ");
+        scanf("%d", &cliente[k]);
+        if(cliente[k] == -999)  break;
+        printf("Digite o nome do cliente: ");
+        scanf("%s", &ncliente[k]);
+        printf("Digite o saldo da conta: ");
+        scanf("%f", &saldo[k]);
+        sagencia = saldo[k]+sagencia;
+        if(saldo[k]<0) negativo++;
+        k++;
+    }
+    printf("\nConta\tSaldo\t\tNegativo:\tNome do Cliente\n");
+    printf("******************************************************************\n");
+
+    while(n != k){
+    printf("%d\tR$%-6.2f\t", cliente[n], saldo[n]);
+    if(saldo[n]<0)  printf("Sim");
+    else printf("Nao");
+    printf("\t\t%s\n", ncliente[n]);
+    n++;
+    }
+    printf("\nA agencia possui %d cliente.\n",k);
+    printf("Ao todo sao %d saldo(s) negativo\n", negativo);
+    printf("A agencia possui R$%.2f em caixa.\n", sagencia);
+}
+
+int main(){
+int menu;
+while (menu != 0){
+printf("%s", "\nEscolha um exercicio de 1 - 11, Exceto o 5, digite 0 para sair: ");
+scanf("%d", &menu);
+switch (menu){
+case 1: ex1(); break;
+case 2: ex2(); break;
+case 3: ex3(); break;
+case 4: ex4(); break;
+case 6: ex6(); break;
+case 7: ex7(); break;
+case 8: ex8(); break;
+case 9: ex9(); break;
+case 10: ex10(); break;
+case 11: ex11(); break;
+default : break;
+}
+}
+}
