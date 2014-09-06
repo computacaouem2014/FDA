@@ -143,6 +143,16 @@ void ex9() {
 	printf("Percentual de saldos negativos: %.2f%%\n", (float)neg / (pos + neg) * 100);
 }
 
+void printArray(char * a[], int size) {
+	if (size > 0) {
+		printf("\n[");
+		printf("%s", a[0]);
+		for (int i = 1; i < size; i++)
+			printf(", %s", a[i]);
+		printf("]\n");
+	} else printf("\n[]\n");
+}
+
 void ex10() {
 }
 
@@ -152,7 +162,7 @@ int main() {
 
 	srand(time(NULL));
 
-	ex9();
+	ex10();
 
 	getchar();
 	getchar();
