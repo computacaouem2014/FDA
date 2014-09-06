@@ -1,29 +1,37 @@
 #include<stdio.h>
 
 void ex1(){
-    char produto[30], controlen;
-    int produz, vendida, estoque, controleq=0;
-    while(produto != '0'){
+   int k;
+    printf("Informe a quantidade de produtos a ser cadastrado: ");
+    scanf("%d", &k);
+    char produto[k][20], controlen;
+    int produz[k], vendida[k], estoque[k], controleq=0,l=0, n=0;
+    while(l != k){
         printf("\nDigite 0 caso queira encerrar o programa.\n");
         printf("Digite o nome do produto: ");
-        scanf("%s", &produto);
+        scanf("%s", &produto[l]);
+        if(produto[l] == '0')   break;
         printf("Informe a quantidade produzida: ");
-        scanf("%d", &produz);
+        scanf("%d", &produz[l]);
         printf("Informe a quantidade vendida: ");
-        scanf("%d", &vendida);
-        estoque = produz - vendida;
-        printf("\nProduto:\tProduzido:\tVendido:\n");
-        printf("*****************************************************************\n");
-        printf("%s\t\t%d\t\t%d", produto, produz, vendida);
-        if(estoque <= 0)    printf("\t -Estoque vazio!\n");
-        else if(estoque<50)  printf("\t -Estoque abaixo de 50!\n");
-        else printf("\n");
-        if(estoque>controleq){
-            controleq = estoque;
-            controlen = produto;
-        }
+        scanf("%d", &vendida[l]);
+        estoque[l] = produz[l] - vendida[l];
+        l++;
     }
-    printf("O maior estoque possui %d unidade com o nome de %s", controleq, controlen);
+    printf("\nProduto:\tProduzido:\tVendido:\n");
+    printf("*****************************************************************\n");
+    while(n != k){
+        printf("%s\t\t%d\t\t%d", produto[n], produz[n], vendida[n]);
+        if(estoque[n] <= 0)    printf("\t -Estoque vazio!\n");
+        else if(estoque[n]<50)  printf("\t -Estoque abaixo de 50!\n");
+        else printf("\n");
+        if(estoque[n]>controleq){
+            controleq = estoque[n];
+            controlen = produto[n];
+        }
+    n++;
+    }
+    printf("\nO maior estoque e de %s com %d unidades.\n", controlen, controleq);
 }
 
 void ex2(){
