@@ -36,3 +36,13 @@ void printArray(char * a[], int size) {
 		printf("]\n");
 	} else printf("\n[]\n");
 }
+
+void fact(int n) {
+	/*
+	TAGS: FATORIAL, RECURSAO
+	COMO FUNCIONA:
+	    - Se o n for menor que 2 (0 ou 1) o fatorial e 1.
+	    - Se nao, o fatorial e n multiplicado por n-1.
+	 */
+	return n < 2 ? 1 : n * fact(n - 1);
+}
