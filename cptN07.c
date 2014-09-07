@@ -133,27 +133,40 @@ void ex9() {
 		printf("Informe o saldo: ");
 		scanf("%f", & saldo);
 		if (saldo >= 0) {
-			printf("Conta: %d\n\tSaldo:%.2f\n\tPositivo\n", conta, saldo);
+			printf("Conta: %d\n\tSaldo: R$%.2f\n\tPositivo\n\n", conta, saldo);
 			pos++;
 		} else {
-			printf("Conta: %d\n\tSaldo:%.2f\n\tNegativo\n", conta, saldo);
+			printf("Conta: %d\n\tSaldo: R$%.2f\n\tNegativo\n\n", conta, saldo);
 			neg++;
 		}
 	}
 	printf("Percentual de saldos negativos: %.2f%%\n", (float)neg / (pos + neg) * 100);
 }
 
-void printArray(char * a[], int size) {
-	if (size > 0) {
-		printf("\n[");
-		printf("%s", a[0]);
-		for (int i = 1; i < size; i++)
-			printf(", %s", a[i]);
-		printf("]\n");
-	} else printf("\n[]\n");
-}
-
 void ex10() {
+	int conta = 0, neg = 0, pos = 0;
+	float saldo, agencia = 0;
+	char nome[33];
+	while (pos + neg < 10000) {
+		printf("Informe o numero da conta [-999 para encerrar]: ");
+		scanf("%d", & conta);
+		if (conta == -999) break;
+		printf("Informe o nome (32 caracteres): ");
+		scanf("%32s", nome);
+		printf("Informe o saldo: ");
+		scanf("%f", & saldo);
+		agencia += saldo;
+		if (saldo >= 0) {
+			printf("Conta: %d\n\tNome:%s\n\tSaldo: R$%.2f\n\tPositivo\n\n", conta, nome, saldo);
+			pos++;
+		} else {
+			printf("Conta: %d\n\tNome:%s\n\tSaldo: R$%.2f\n\tNegativo\n\n", conta, nome, saldo);
+			neg++;
+		}
+	}
+	printf("Total de clientes com saldo negativo: %d\n", neg);
+	printf("Total de clientes na agencia: %d\n", pos + neg);
+	printf("Saldo da agencia: %.2f\n", agencia);
 }
 
 int main() {
