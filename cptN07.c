@@ -35,7 +35,7 @@ void ex2() {
 		printf("Informe uma idade: [<=0 para sair]\n");
 		scanf("%d", & idade);
 		if (idade > 50) maior++;
-		else if (idade < 21) menor++;
+		else if (idade < 21 && idade > 0) menor++;
 	}
 	printf("Total de pessoas com menos de 21: %d\n", menor);
 	printf("Total de pessoas com mais de 50: %d\n", maior);
