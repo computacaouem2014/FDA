@@ -9,7 +9,7 @@ const char str[8][16] = {};
 void ex1() {
 	char nome[20], nomemaior[20];
 	int quantprod = 0, quantvend = 0, estoque = 0, flag = 1, maior = 0;
-	do {
+	while (flag) {
 		printf("Informe o nome do produto: ");
 		scanf("%20s", nome);
 		printf("Informe a quantidade produzida: ");
@@ -18,15 +18,14 @@ void ex1() {
 		scanf("%d", & quantvend);
 		estoque = quantprod - quantvend;
 		printf("\nProduto: %s\n\tProduzido: %d\n\tVendidos: %d\n\tEstoque: %d\n", nome, quantprod, quantvend, estoque);
-		if (estoque < 50)
-			printf("O estoque e menor que 50.");
-		printf("Digite 0 para sair ou 1 para continuar.\n");
-		scanf("%d", & flag);
+		if (estoque < 50) printf("O estoque e menor que 50.\n");
 		if (estoque > maior) {
 			strcpy(nomemaior, nome);
 			maior = estoque;
 		}
-	} while (flag);
+		printf("Digite 0 para sair ou 1 para continuar.\n");
+		scanf("%d", & flag);
+	}
 	printf("Produto com maior estoque: %s (Estoque:%d)\n", nomemaior, maior);
 }
 
@@ -88,13 +87,12 @@ void ex6() {
 	float termo;
 	printf("Calcular os termos ate n=");
 	scanf("%d", & n);
-	do {
+	while (i++ < n) {
 		termo = (float) num / denum;
-		printf("O termo n%d e: %.8f\n", i + 1, termo);
+		printf("O termo n%d e: %.8f\n", i, termo);
 		num += denum;
 		denum = num - denum;
-		i++;
-	} while (i < n);
+	}
 }
 
 void ex7() {
@@ -175,7 +173,7 @@ int main() {
 
 	srand(time(NULL));
 
-	ex10();
+	ex6();
 
 	getchar();
 	getchar();
