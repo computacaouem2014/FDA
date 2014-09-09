@@ -9,7 +9,7 @@ Utils.c é um arquivo com métodos recorrentes em exercícios, por exemplo, prin
 Como usar:
   * Você pode visualizar os arquivos pelo próprio GitHub.
   * Baixar e editar no Code::Blocks ou qualquer outra IDE.
-  * Se for fazer alguma edição ou novo arquivo, `git pull` antes de começar para não sobrescreverem seus amiguinhos.
+  * Se for fazer alguma edição ou novo arquivo que nao seja pelo próprio site, `git pull` antes de começar para não ter problemas com conflitos e merges.
 
 ===
 
