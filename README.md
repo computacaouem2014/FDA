@@ -1,7 +1,7 @@
 FDA
 ===
 
-Listas de exercícios e exercícios feitos em sala de aula de FDA. Recomendável resolvê-las por conta própria e usar as soluções daqui apenas para conferir/comparar respostas.
+Listas de exercícios e exercícios feitos em sala de aula de FDA. Recomendável resolvê-las por conta própria e usar as soluções daqui apenas para conferir/comparar respostas.  
 Utils.c é um arquivo com métodos recorrentes em exercícios, por exemplo, printArray e fatorial.
 
 ===
