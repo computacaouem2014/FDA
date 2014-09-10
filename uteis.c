@@ -53,8 +53,9 @@ COMO FUNCIONA:
     - Compara o proximo termo da sequencia com o anterior, se for maior troca colocando em ordem crescente.
     
 COMO USAR:
-    - Mudar o tipo do vetor no argumento principal "BUBBLE(INT ARR[]).
+    - Mudar o tipo do vetor no argumento principal.
     - Usar.
+    
 OBS:
     - Para ordenar em ordem decrescente o seu vetor basta trocar o sinal > na comparacao do if por <.
 */
@@ -69,4 +70,26 @@ void bubble(int arr[], int size){
 			}
 		}
 	}
+}
+
+/*
+TAGS: ARRAYS, VETOR,GERAR NUMEROS
+COMO FUNCIONA:
+    - Usa a funcao rand(), da biblioteca time.h, para gerar valores aleatorios para o vetor.
+
+COMO USAR:
+    - Somente implantar no algoritimo.
+   
+OBS:
+    - Para utilizar este algoritimo voce precisa incluir a biblioteca time.h junto a outras bibliotecas (#include)
+   
+Exemplos:
+    
+    - Gerar numeros de 1000 a 10000: randNum(arr, arrSize, 1000, 10000);
+*/
+void randNum(int arr[], int size, int max, int min){
+	srand(time(NULL));
+	max -= min;
+	for (int k = size - 1; k>=0; k--)
+		arr[k] = rand() % max + min;
 }
