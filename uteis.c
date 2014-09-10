@@ -46,3 +46,27 @@ COMO FUNCIONA:
 void fact(int n) {
 	return n < 2 ? 1 : n * fact(n - 1);
 }
+
+/*
+TAGS: ARRAYS, ORDENAR
+COMO FUNCIONA:
+    - Compara o proximo termo da sequencia com o anterior, se for maior troca colocando em ordem crescente.
+    
+COMO USAR:
+    - Mudar o tipo do vetor no argumento principal "BUBBLE(INT ARR[]).
+    - Usar.
+OBS:
+    - Para ordenar em ordem decrescente o seu vetor basta trocar o sinal > na comparacao do if por <.
+*/
+void bubble(int arr[], int size){
+	int temp;
+	for (int k = size; k >  0; k--){
+		for (int j = 0; j < k; j++){
+			if (arr[j] > arr[j + 1]){
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
