@@ -91,7 +91,6 @@ void selection(int arr[], int arrSize){
 			arr[i] = arr[min];
 			arr[min] = temp;
 		}
-		k=min+1;
 	}
 }
 
