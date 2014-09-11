@@ -115,3 +115,23 @@ void randNum(int arr[], int size, int max, int min){
 	for (int k = size - 1; k>=0; k--)
 		arr[k] = rand() % max + min;
 }
+
+/*
+test case:
+	int *a = {0 ,1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+	int *b, *c;
+	splitArray(a, 11, 8, b, c);
+	printArray(b, 8);
+	printArray(c, 11-8);
+*/
+void splitArray(int *arr, int size, int pivot, int *outa, int *outb){
+	int i;
+	outa = (int*) realloc(outa, pivot);
+	outb = (int*) realloc(outb, size - pivot);
+	for (i = 0; i < pivot; i++){
+		outa[i] = arr[i];
+	}
+	for (i = 0; i < size - pivot; i++){
+		outb[i] = arr[i+pivot];
+	}
+}
