@@ -71,6 +71,29 @@ void bubble(int arr[], int size){
 		}
 	}
 }
+/*
+TAGS: ARRAYS, VETOR, ORDENAR
+COMO FUNCIONA:
+    - Compara o segundo termo da vetor com o primeiro e se for troca.
+    
+COMO USAR:
+    - Apenas implantar no algoritimo.
+*/
+void selection(int arr[], int arrSize){
+	for(int i=0; i<arrSize-1; i++){
+		int min = i;
+		for(int k=(i+1); k<arrSize; k++){
+			if(arr[k]<arr[min])
+				min=k;
+		}
+		if (min != i){
+			int temp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = temp;
+		}
+		k=min+1;
+	}
+}
 
 /*
 TAGS: ARRAYS, VETOR,GERAR NUMEROS
