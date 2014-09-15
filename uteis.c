@@ -164,7 +164,7 @@ void swap(int *arr, int ia, int ib){
 /*
 TAGS: ARRAY, VETOR, FIND, PROCURA
 COMO FUNCIONA:
-    - Procura um elemento no intervalo [0,size] do array. Retorna <index> do elemento se encontrar e -1 se nao.
+    - Procura um elemento no intervalo [0,size) do array. Retorna <index> do elemento se encontrar e -1 se nao.
     
 COMO USAR:
     - Copiar, colar, usar.
