@@ -135,12 +135,10 @@ void splitArray(int *in, int size, int pivot, int *outa, int *outb){
 	int i;
 	outa = (int*) realloc(outa, pivot);
 	outb = (int*) realloc(outb, size - pivot);
-	for (i = 0; i < pivot; i++){
+	for (i = 0; i < pivot; i++)
 		outa[i] = in[i];
-	}
-	for (i = 0; i < size - pivot; i++){
+	for (i = 0; i < size - pivot; i++)
 		outb[i] = in[i+pivot];
-	}
 }
 
 /*
