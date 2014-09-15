@@ -117,21 +117,90 @@ void randNum(int arr[], int size, int max, int min){
 }
 
 /*
-test case:
-	int *a = {0 ,1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-	int *b, *c;
-	splitArray(a, 11, 8, b, c);
-	printArray(b, 8);
-	printArray(c, 11-8);
+TAGS: ARRAY, VETOR, SPLIT, DIVIDIR, CORTAR
+COMO FUNCIONA:
+    - Divide o vetor entrada <in> de tamanho <size> em dois outros <outa,outb> no ponto <pivot>.
+    
+COMO USAR:
+    - Copiar, colar, usar.
+
+Exemplos:
+    - int in = {1, 2, 3, 4, 5, 6, 7}, outa, outb;
+    - splitArray(in, 7, 3, outa, outb);
+    - Output:
+    	- outa = {1, 2, 3}
+    	- outb = {4, 5, 6, 7}
 */
-void splitArray(int *arr, int size, int pivot, int *outa, int *outb){
+void splitArray(int *in, int size, int pivot, int *outa, int *outb){
 	int i;
 	outa = (int*) realloc(outa, pivot);
 	outb = (int*) realloc(outb, size - pivot);
 	for (i = 0; i < pivot; i++){
-		outa[i] = arr[i];
+		outa[i] = in[i];
 	}
 	for (i = 0; i < size - pivot; i++){
-		outb[i] = arr[i+pivot];
+		outb[i] = in[i+pivot];
 	}
 }
+
+/*
+TAGS: ARRAY, VETOR, TROCAR, SWAP
+COMO FUNCIONA:
+    - Troca dois elementos de lugar num vetor.
+    
+COMO USAR:
+    - Copiar, colar, usar.
+
+Exemplos:
+    - int in = {1, 2, 3, 4, 5, 6, 7};
+    - swap(in, 5, 3);
+    - Output:
+    	- in = {1, 2, 3, 6, 5, 4, 7}
+*/
+void swap(int *arr, int ia, int ib){
+    int aux = arr[ib];
+    arr[ib] = arr[ia];
+    arr[ia] = aux;
+}
+
+/*
+TAGS: ARRAY, VETOR, FIND, PROCURA
+COMO FUNCIONA:
+    - Procura um elemento no array. Retorna <index> do elemento se encontrar e -1 se nao.
+    
+COMO USAR:
+    - Copiar, colar, usar.
+
+Exemplos:
+    - int in = {1, 2, 3, 4, 5, 6, 7};
+    - findElem(in, 5);
+    - Output:
+    	- 4
+*/
+int findElem(int a[], int elem){
+    for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++)
+        if (a[i] == elem) return i;
+    return -1;
+}
+
+/*
+TAGS: ARRAY, VETOR, SORT, INSERTION, ORDENACAO
+COMO FUNCIONA:
+    - Ordena o vetor usando o metodo insertion.
+    
+COMO USAR:
+    - Copiar, colar, usar.
+
+Exemplos:
+    - int in = {6, 3, 1, 4, 2, 9, 7};
+    - insertionSort(in, 7);
+    - Output:
+    	- in = {1, 2, 3, 4, 6, 7, 9}
+*/
+void insertionSort(int *arr, int size){
+    for (int i = 0; i < size; i++)
+        for (int k = i; k > 0; k--)
+            if (arr[k] < arr[k-1])
+                swap(arr, k, k-1);
+}
+
