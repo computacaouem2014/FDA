@@ -204,3 +204,88 @@ void insertionSort(int *arr, int size){
                 swap(arr, k, k-1);
 }
 
+/*
+TAGS: MERGE, SORT
+COMO FUNCIONA:
+	- Divide a array em arrays menores ate chegar em arrays unitarias depois junta todas de maneira ordenada
+	
+COMO USAR:
+	- Somente implantar no algoritimo.
+	- Para ordenar basta usar a funcao mergeSort(arr[], arrSize[]).
+
+OBS:
+	- Este algoritimo realiza a mesma coisa que bubbleSorte e selectionSort, a diferenca e que algo que o bubbleSorte demoraria cerca de 30 segundos para realizar por este algoritimo demora 4, ou seja, e muito mais veloz.
+*/
+void merge(int vec[], int vecSize) {
+  int mid;
+  int i, j, k;
+  int* tmp;
+ 
+  tmp = (int*) malloc(vecSize * sizeof(int));
+  if (tmp == NULL) {
+    exit(1);
+  }
+ 
+  mid = vecSize / 2;
+ 
+  i = 0;
+  j = mid;
+  k = 0;
+  while (i < mid && j < vecSize) {
+    if (vec[i] <= vec[j]) {
+      tmp[k] = vec[i++];
+    }
+    else {
+      tmp[k] = vec[j++];
+    }
+    ++k;
+  }
+ 
+  if (i == mid) {
+    while (j < vecSize) {
+      tmp[k++] = vec[j++];
+    }
+  }
+  else {
+    while (i < mid) {
+      tmp[k++] = vec[i++];
+ 
+    }
+  }
+ 
+  for (i = 0; i < vecSize; ++i) {
+    vec[i] = tmp[i];
+  }
+ 
+  free(tmp);
+}
+ 
+void mergeSort(int vec[], int vecSize) {
+  int mid;
+ 
+  if (vecSize > 1) {
+    mid = vecSize / 2;
+    mergeSort(vec, mid);
+    mergeSort(vec + mid, vecSize - mid);
+    merge(vec, vecSize);
+  }
+}
+
+/*
+TAGS: ARRAYS, COPIAR
+COMO FUNCIONA:
+	- Copia os valores de uma arrA[], para uma arrB[].
+	
+COMO USAR:
+	- Traducao das entradas:
+		- int in[] // Array de entrada (De onde sera copiada os dados).
+		- int inSize // Tamanho da array de entrada. 
+		- int out[] // Array de saida (Para onde os dados serao copiados)
+
+OBS:
+	- Este algoritimo so copia dados de arrays de mesmo tamanho.
+*/
+void copyArray(int in[], int inSize, int out[]){
+		for(int k = 0; k < inSize; k++)
+			out[k] = in[k];
+}
