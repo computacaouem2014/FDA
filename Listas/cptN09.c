@@ -169,10 +169,8 @@ void ex7() {
 		int digitos[11], soma = 0;
 		if (strlen(cpf) != 11) return 0;
 		for (int i = 0; i < 11; i++) {
-			if (cpf[i] > 47 && cpf[i] < 58) {
-				digitos[i] = cpf[i] - 48;
-				soma += digitos[i];
-			} else return 0;
+			if (cpf[i] > 47 && cpf[i] < 58) digitos[i] = cpf[i] - 48;
+			else return 0;
 		}
 		soma = 0;
 		for (int i = 0; i < 9; i++)
