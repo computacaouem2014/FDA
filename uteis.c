@@ -117,91 +117,89 @@ void randNum(int arr[], int size, int max, int min){
 }
 
 /*
-TAGS: ARRAY, VETOR, SPLIT, DIVIDIR, CORTAR
+TAGS: MERGE, SORT
 COMO FUNCIONA:
-    - Divide o vetor entrada <in> de tamanho <size> em dois outros <outa,outb> no ponto <pivot>.
-    
+	- Divide a array em arrays menores ate chegar em arrays unitarias depois junta todas de maneira ordenada
+	
 COMO USAR:
-    - Copiar, colar, usar.
+	- Somente implantar no algoritimo.
+	- Para ordenar basta usar a funcao mergeSort(arr[], arrSize[]).
 
-Exemplos:
-    - int in = {1, 2, 3, 4, 5, 6, 7}, outa, outb;
-    - splitArray(in, 7, 3, outa, outb);
-    - Output:
-    	- outa = {1, 2, 3}
-    	- outb = {4, 5, 6, 7}
+OBS:
+	- Este algoritimo realiza a mesma coisa que bubbleSorte e selectionSort, a diferenca e que algo que o bubbleSorte demoraria cerca de 30 segundos para realizar por este algoritimo demora 4, ou seja, e muito mais veloz.
 */
-void splitArray(int *in, int size, int pivot, int *outa, int *outb){
-	int i;
-	outa = (int*) realloc(outa, pivot);
-	outb = (int*) realloc(outb, size - pivot);
-	for (i = 0; i < pivot; i++)
-		outa[i] = in[i];
-	for (i = 0; i < size - pivot; i++)
-		outb[i] = in[i+pivot];
+void merge(int vec[], int vecSize) {
+  int mid;
+  int i, j, k;
+  int* tmp;
+ 
+  tmp = (int*) malloc(vecSize * sizeof(int));
+  if (tmp == NULL) {
+    exit(1);
+  }
+ 
+  mid = vecSize / 2;
+ 
+  i = 0;
+  j = mid;
+  k = 0;
+  while (i < mid && j < vecSize) {
+    if (vec[i] <= vec[j]) {
+      tmp[k] = vec[i++];
+    }
+    else {
+      tmp[k] = vec[j++];
+    }
+    ++k;
+  }
+ 
+  if (i == mid) {
+    while (j < vecSize) {
+      tmp[k++] = vec[j++];
+    }
+  }
+  else {
+    while (i < mid) {
+      tmp[k++] = vec[i++];
+ 
+    }
+  }
+ 
+  for (i = 0; i < vecSize; ++i) {
+    vec[i] = tmp[i];
+  }
+ 
+  free(tmp);
+}
+ 
+void mergeSort(int vec[], int vecSize) {
+  int mid;
+ 
+  if (vecSize > 1) {
+    mid = vecSize / 2;
+    mergeSort(vec, mid);
+    mergeSort(vec + mid, vecSize - mid);
+    merge(vec, vecSize);
+  }
 }
 
 /*
-TAGS: ARRAY, VETOR, TROCAR, SWAP
+TAGS: ARRAYS, COPIAR
 COMO FUNCIONA:
-    - Troca dois elementos de lugar num vetor.
-    
+	- Copia os valores de uma arrA[], para uma arrB[].
+	
 COMO USAR:
-    - Copiar, colar, usar.
+	- Traducao das entradas:
+		- int in[] // Array de entrada (De onde sera copiada os dados).
+		- int inSize // Tamanho da array de entrada. 
+		- int out[] // Array de saida (Para onde os dados serao copiados)
 
-Exemplos:
-    - int in = {1, 2, 3, 4, 5, 6, 7};
-    - swap(in, 5, 3);
-    - Output:
-    	- in = {1, 2, 3, 6, 5, 4, 7}
+OBS:
+	- Este algoritimo so copia dados de arrays de mesmo tamanho.
 */
-void swap(int *arr, int ia, int ib){
-    int aux = arr[ib];
-    arr[ib] = arr[ia];
-    arr[ia] = aux;
-}
-
-/*
-TAGS: ARRAY, VETOR, FIND, PROCURA
-COMO FUNCIONA:
-    - Procura um elemento no intervalo [0,size) do array. Retorna <index> do elemento se encontrar e -1 se nao.
-    
-COMO USAR:
-    - Copiar, colar, usar.
-
-Exemplos:
-    - int in = {1, 2, 3, 4, 5, 6, 7};
-    - findElem(in, 7, 5);
-    - findElem(in, 3, 5);
-    - Output:
-    	- 4
-    	- -1
-*/
-int findElem(int a[], int size, int elem){
-    for (int i = 0; i < size; i++)
-        if (a[i] == elem) return i;
-    return -1;
-}
-
-/*
-TAGS: ARRAY, VETOR, SORT, INSERTION, ORDENACAO
-COMO FUNCIONA:
-    - Ordena o vetor usando o metodo insertion.
-    
-COMO USAR:
-    - Copiar, colar, usar.
-
-Exemplos:
-    - int in = {6, 3, 1, 4, 2, 9, 7};
-    - insertionSort(in, 7);
-    - Output:
-    	- in = {1, 2, 3, 4, 6, 7, 9}
-*/
-void insertionSort(int *arr, int size){
-    for (int i = 0; i < size; i++)
-        for (int k = i; k > 0; k--)
-            if (arr[k] < arr[k-1])
-                swap(arr, k, k-1);
+void copyArray(int in[], int inSize, int out[]){
+		for(int k = 0; k < inSize; k++)
+			out[k] = in[k];
 }
 
 /*
