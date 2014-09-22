@@ -48,7 +48,7 @@ void ex6(){
         int aviao_1[max], aviao_2[max], aviao_3[max], aviao_4[max], aviao_5[max], aviao_6[max], aviao_7[max], aviao_8[max], aviao_9[max], aviao_10[max], aviao_11[max], aviao_12[max], k;
     char opcao;
     while(opcao != 3){
-    printf("Bem-vindo ao Philins AirLine!\n");
+    printf("Bem-vindo ao Andinho AirLine!\n");
     printf("*********************************\n");
     printf("Qual opcao voce deseja: \n");
     printf("1 - Consultar voo.\n");
