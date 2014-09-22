@@ -59,7 +59,7 @@ void ex3() {
 	int m = 0, f = 0;
 	int me = 0, ime = 0;
 	int fe = 0, menor = 0;
-	int i45 = 0, i35 = 0;
+	int i45 = 0;
 	while (1) {
 		printf("\nInforme a idade do candidato (0 para sair): ");
 		scanf("%d", & idade);
@@ -87,7 +87,7 @@ void ex3() {
 	printf("Candidatos do sexo feminino: %d\n", f);
 	printf("Idade media dos homens com experiencia no servico: %.2f\n", (float) ime / me);
 	printf("Percentagem de homens com mais de 45 anos: %.2f%%\n", (float) i45 / m * 100);
-	printf("Numero de mulheres com menos de 35 anos e com experiencia no servico: %d\n", i35);
+	printf("Numero de mulheres com menos de 35 anos e com experiencia no servico: %d\n", fe);
 	printf("Menor idade entre as mulheres com experiencia no servico: %d\n", menor);
 }
 
