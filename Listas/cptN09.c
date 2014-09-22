@@ -183,7 +183,7 @@ void ex7() {
 			soma += digitos[i] * (11 - i);
 		if (soma % 11 > 1) {
 			if (11 - (soma % 11) != digitos[10]) return 0;
-		} else if (digitos[9] != 0) return 0;
+		} else if (digitos[10] != 0) return 0;
 		return 1;
 	}
 	if (valideCPF(cpf)) printf("O CPF informado e valido.\n");
