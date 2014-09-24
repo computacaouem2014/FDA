@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<math.h>
+
+#define max 10
+
+void ex4(){
+    float temperatura[12], maior = 0, menor = 100;
+    int k =0, mesmaior, mesmenor;
+    while(k != 12){
+        printf("Digite a temperatura media do mes %d: ", k+1);
+        scanf("%f", &temperatura[k]);
+        if(temperatura[k]> maior){
+            maior = temperatura[k];
+            mesmaior = k+1;
+            }
+        if(temperatura[k]< menor){
+            menor = temperatura[k];
+            mesmenor = k+1;
+            }
+        k++;
+    }
+    k=0;
+    while(k != 12){
+        printf("Mes: %d\tTemperatura: %.2f\n",k+1, temperatura[k]);
+        k++;
+    }
+    printf("Maior temperatura: %.2f no mes: %d\n", maior, mesmaior);
+    printf("Menor temperatura: %.2f no mes: %d\n", menor, mesmenor);
+    }
+
+void ex5(){
+    int vet[max], k, maior, menor = pow(99,9), media, par;
+    k = maior = media = par =0;
+    while(k != max){
+        printf("Informe um numero: ");
+        scanf("%d", &vet[k]);
+        if(vet[k] > maior)  maior = vet[k];
+        else if(vet[k]<menor)   menor = vet[k];
+        if(vet[k]%2 == 0)   par++;
+        media = media+vet[k];
+        k++;
+    }
+    printf("Maior numero: %d\nMenor numero: %d\nMedia dos numeros: %d\nPercentual de pares: %.2f",maior,menor,media/max,(par/max)*100);
+}
+
+void ex6(){
+    printf("Under construiction!!!!!");
+        int aviao_1[max], aviao_2[max], aviao_3[max], aviao_4[max], aviao_5[max], aviao_6[max], aviao_7[max], aviao_8[max], aviao_9[max], aviao_10[max], aviao_11[max], aviao_12[max], k;
+    char opcao;
+    while(opcao != 3){
+    printf("Bem-vindo ao Andinho AirLine!\n");
+    printf("*********************************\n");
+    printf("Qual opcao voce deseja: \n");
+    printf("1 - Consultar voo.\n");
+    printf("2 - Efetuar Reserva.\n");
+    printf("3 - Sair.\n");
+    printf("Opcao: ");
+    scanf("%s", &opcao);
+    if(opcao == '1'){
+        printf("\nDigite a forma de busca: ");
+        printf("1 - Por numero do voo.\n");
+        printf("2 - Por por origem.\n");
+        printf("3 - Por destino.\n");
+    }
+    }
+}
+
+int main(){
+int menu;
+while (menu != 0){
+printf("%s", "\nEscolha um exercicio de 4 - 6,digite 0 para sair: ");
+scanf("%d", &menu);
+switch (menu){
+case 4: ex4(); break;
+case 5: ex5(); break;
+case 6: ex6(); break;
+default : break;
+}
+}
+}
