@@ -241,6 +241,7 @@ void swap(int *arr, int ia, int ib){
     int aux = arr[ib];
     arr[ib] = arr[ia];
     arr[ia] = aux;
+}
 /*
 TAGS: ARRAY, VETOR, FIND, PROCURA
 COMO FUNCIONA:
@@ -277,4 +278,25 @@ void insertionSort(int *arr, int size){
                 swap(arr, k, k-1);
         }
     }
+}
+
+/*
+TAGS: MATRIZES, PRINT
+    - Imprime uma matriz.
+    OBS: Para usar este código você precisa usar duas definições:
+    	- #define lines X    ---> Número de linhas da matriz
+    	- #define col X      ---> Número de colunas da matriz
+*/
+void printMatrix(int a[lines][col]) {
+	if (lines > 0 && col > 0) {
+		printf("\n[");
+		printf("%d", a[0][0]);
+		for (int i = 0; i < lines; i++){
+			for (int j = 1; j < col; j++)
+				printf(", %d", a[i][j]);
+			printf("]\n");
+			if (i + 1 < lines)	printf("[%d", a[i][0]);
+		}
+	}
+	else printf("\n[]\n");
 }
