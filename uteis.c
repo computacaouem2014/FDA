@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <locale.h>
 
 /*
 TAGS: PRINT, ARRAY, VETOR
@@ -35,6 +36,40 @@ void printArray(char * a[], int size) {
 			printf(", %s", a[i]);
 		printf("]\n");
 	} else printf("\n[]\n");
+}
+
+/*
+TAGS: PRINT, ARRAY, VETOR, 2D, MATRIZES
+ */
+void printMatrix(int m, int n, int arr[m][n]){
+	setlocale(LC_ALL, "");
+    if (m*n > n){
+        printf("\n⎡");
+        for (int j = 0; j < n; j++){
+            printf("%6d ", arr[0][j]);
+        }
+        printf("⎤\n");
+        for (int i = 1; i < m-1; i++){
+            printf("⎢");
+            for (int j = 0; j < n; j++){
+                printf("%6d ", arr[i][j]);
+            }
+            printf("⎥\n");
+        }
+        printf("⎣");
+        for (int j = 0; j < n; j++){
+            printf("%6d ", arr[m-1][j]);
+        }
+        printf("⎦\n");
+    } else if (m == 1){
+        printf("\n[");
+        for (int i = 0; i < n; i++){
+                printf("%6d ", arr[0][i]);
+        }
+        printf("]\n");
+    } else {
+        printf("\n[]\n");
+    }
 }
 
 /*
@@ -333,12 +368,9 @@ void matrixSort(int arr[lines][col]){
 /*
 TAGS: MATRIZES, NUM GENERATOR
     - Gera valores aleatórios para a matriz
-    OBS: Para usar este código você precisa usar duas definições:
-    	- #define lines X    ---> Número de linhas da matriz
-    	- #define col X      ---> Número de colunas da matriz
 */
 
-void randMatrix(int arr[lines][col], int max, int min){
+void randMatrix(int lines, int col, int arr[lines][col], int max, int min){
 	srand(time(NULL));
 	max -= min;
 	for (int k = 0; k < lines; k++){
