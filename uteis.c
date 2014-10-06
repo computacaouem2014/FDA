@@ -40,6 +40,7 @@ void printArray(char * a[], int size) {
 
 /*
 TAGS: PRINT, ARRAY, VETOR, 2D, MATRIZES
+OBS.: É necessário usar o #include <locale.h>
  */
 void printMatrix(int m, int n, int arr[m][n]){
 	setlocale(LC_ALL, "");
