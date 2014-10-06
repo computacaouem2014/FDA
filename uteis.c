@@ -300,3 +300,49 @@ void printMatrix(int a[lines][col]) {
 	}
 	else printf("\n[]\n");
 }
+
+/*
+TAGS: MATRIZES, SORT
+    - Ordena os valores de cada linha de uma matriz
+    OBS: Para usar este código você precisa usar duas definições:
+    	- #define lines X    ---> Número de linhas da matriz
+    	- #define col X      ---> Número de colunas da matriz
+    Exemplo: 
+        - m[2][2] = {"2, 3", "4, 1"}
+        matrixSort(m);
+        m = {"2, 3", "1, 4"};
+*/
+
+void matrixSwap(int arr[lines][col], int ia, int ib, int ic){
+	int aux = arr[ia][ic];
+	arr[ia][ic] = arr[ia][ib];
+	arr[ia][ib] = aux;
+}
+
+void matrixSort(int arr[lines][col]){
+	for (int h = 0; h < lines; h++){
+		for (int i = 0; i < col; i++){
+			for (int k = i; k > 0; k--){
+				if (arr[h][k] < arr[h][k - 1])
+					swap(arr, h, k, k-1);
+			}
+		}
+	}
+}
+
+/*
+TAGS: MATRIZES, NUM GENERATOR
+    - Gera valores aleatórios para a matriz
+    OBS: Para usar este código você precisa usar duas definições:
+    	- #define lines X    ---> Número de linhas da matriz
+    	- #define col X      ---> Número de colunas da matriz
+*/
+
+void randMatrix(int arr[lines][col], int max, int min){
+	srand(time(NULL));
+	max -= min;
+	for (int k = 0; k < lines; k++){
+		for (int j = 0; j < col; j++)
+			arr[k][j] = rand() % max + min;
+	}
+}
