@@ -63,14 +63,14 @@ void sumLine(int arrIn[lines][col], int arrOut[lines]){
 			arrOut[k] += arrIn[k][j];
 	}
 }
-
+/*
 void multLine(int arr1[lines][col], int arr2[lines]){
 	for (int k = 0; k < lines, k++){
-		for (int j = 0; j < col; j++)
+		for (int j = 0; j < col; j++)			--> Falta terminar.
 
 	}
 }
-
+*/
 int main(){
 	int m[lines][col], res[lines] = {0};
 	randMatrix(m, 100, 0);
