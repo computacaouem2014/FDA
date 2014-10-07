@@ -43,35 +43,52 @@ TAGS: PRINT, ARRAY, VETOR, 2D, MATRIZES
 OBS.: É necessário usar o #include <locale.h>
  */
 void printMatrix(int m, int n, int arr[m][n]){
-	setlocale(LC_ALL, "");
     if (m*n > n){
         printf("\n⎡");
         for (int j = 0; j < n; j++){
             printf("%6d ", arr[0][j]);
         }
         printf("⎤\n");
+        printf("⎢");
+        for (int k = 0; k < n; k++){
+            printf("       ");
+        }
+        printf("⎥\n");
         for (int i = 1; i < m-1; i++){
+            if (i != 1){
+                printf("⎢");
+                for (int k = 0; k < n; k++){
+                    printf("       ");
+                }
+                printf("⎥\n");
+            }
             printf("⎢");
             for (int j = 0; j < n; j++){
                 printf("%6d ", arr[i][j]);
             }
             printf("⎥\n");
         }
+        printf("⎢");
+        for (int k = 0; k < n; k++){
+            printf("       ");
+        }
+        printf("⎥\n");
         printf("⎣");
         for (int j = 0; j < n; j++){
             printf("%6d ", arr[m-1][j]);
         }
-        printf("⎦\n");
+        printf("⎦\n\n");
     } else if (m == 1){
         printf("\n[");
         for (int i = 0; i < n; i++){
                 printf("%6d ", arr[0][i]);
         }
-        printf("]\n");
+        printf("]\n\n");
     } else {
-        printf("\n[]\n");
+        printf("\n[]\n\n");
     }
 }
+
 
 /*
 TAGS: FATORIAL, RECURSAO
