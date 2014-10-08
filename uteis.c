@@ -298,6 +298,7 @@ void swap(int *arr, int ia, int ib){
     arr[ib] = arr[ia];
     arr[ia] = aux;
 }
+
 /*
 TAGS: ARRAY, VETOR, FIND, PROCURA
 COMO FUNCIONA:
@@ -318,6 +319,8 @@ int findElem(int a[], int size, int elem){
     for (int i = 0; i < size; i++)
         if (a[i] == elem) return i;
     return -1;
+}
+
 /*
 TAGS: ARRAY, VETOR, SORT, INSERTION, ORDENACAO
     - Ordena o vetor usando o metodo insertion.
