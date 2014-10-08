@@ -28,13 +28,16 @@ EXTRA:
         - {}, (), <>, ao inves de []
         - Elementos aparecerem entre aspas: ..."%s"... -> ..."\"%s\""...
  */
-void printArray(char * a[], int size) {
-	if (size > 0) {
+void printArray(int a[], int size) {
+	if (size > 1) {
 		printf("\n[");
-		printf("%s", a[0]);
+		printf("%d", a[0]);
 		for (int i = 1; i < size; i++)
-			printf(", %s", a[i]);
+			printf(", %d", a[i]);
 		printf("]\n");
+	} else if (size == 1){
+		printf("\n[%d]\n", a[0]);
+	}
 	} else printf("\n[]\n");
 }
 
