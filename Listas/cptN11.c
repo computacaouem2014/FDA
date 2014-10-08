@@ -454,6 +454,7 @@ void ex11(){
 int main(){
 	setlocale(LC_ALL, "");
 	printf("LISTA DE FDA - 11");
+
 	ex1();
 	ex2();
 	ex3();
@@ -465,5 +466,6 @@ int main(){
 	ex9();
 	ex10();
 	ex11();
+
 	return 0;
 }
