@@ -87,7 +87,6 @@ void ex2(){
     for(int x=0;x<n;x++){
         mostrarCamposex2(p[x]);
     }
-    printf("%d\n",count);
     printf("%.2f %% das pessoas tem cabelo preto e olhos castanhos",!count?0:count/(float)n*100);
 }
 
