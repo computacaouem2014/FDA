@@ -27,7 +27,7 @@ int leitura(struct pessoa *o){
         puts("Informe a idade:");
         scanf("%d",&(*o).idade);
     }while((*o).idade<=0);
-    return (((*o).olhos=='c')||((*o).olhos=='C'))&&(((*o).cabelo=='P')||((*o).cabelo=='p'))?1:0;
+    return (((*o).olhos=='c')||((*o).olhos=='C'))&&(((*o).cabelo=='P')||((*o).cabelo=='p'));
 }
 
 void mostrarCampos(struct produto o){
