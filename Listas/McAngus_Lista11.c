@@ -3,6 +3,8 @@
 #include <math.h>
 #include <locale.h>
 
+int OS; //Eliminar problemas com clear entre linux e windows.
+
 void printArray(int a[], int size) {
 	if (size > 1) {
 		printf("\n[");
@@ -74,6 +76,8 @@ void ex1(){
 		else if (num[0] %2 == 0) num[2]++;
 		else num[3]++;
 	}
+	if (OS) system("clear");
+	else system("cls");
 	printf("%d numeros sao nulos.\n", num[1]);
 	printf("%d numeros sao pares.\n", num[2]);
 	printf("%d numeros sao impares.\n", num[3]);
@@ -86,6 +90,9 @@ void ex2(){
 	for (int k = 0; k<n; k++){
 		printf("Digite o %d numero: ", k+1); scanf("%d", &num[k]);
 	}
+	if (OS) system("clear");
+	else system("cls");
+	printArray(num, n);
 	for (int k = 0; k<n; k++){
 		for (int j = k + 1; j<n; j++){
 			if (num[k] > num[j]){
@@ -99,12 +106,14 @@ void ex2(){
 }
 
 void ex3(){
-        int n, count = 0, rept;
-        printf("Digite a quantidade de numeros que deseja dar entrada: "); scanf("%d", &n);
+    int n, count = 0, rept;
+    printf("Digite a quantidade de numeros que deseja dar entrada: "); scanf("%d", &n);
 	int num[n];
 	for (int k = 0; k<n; k++){
 		printf("Digite o %d numero: ", k+1); scanf("%d", &num[k]);		
 	}
+	if (OS) system("clear");
+	else system("cls");
 	printf("Digite qual valor deseja verificar o numero de repeticoes: "); scanf("%d", &rept);
 	for (int k = 0; k<n; k++){
 		if (num[k] == rept) {
@@ -112,7 +121,8 @@ void ex3(){
 			count++;
 		}
 	}
-	count != 0 ? printf("Numero de vezes: %d", count) : printf("Elemento nao encontrado.");
+	printArray(num, n);
+	count != 0 ? printf("O numero %d aparece %d vezes.\n\n", rept, count) : printf("Elemento nao encontrado.");
 }
 
 void ex4(){
@@ -126,7 +136,9 @@ void ex4(){
 		if (k > 0 && k < n) area += y[k] * esp;
 	}
 	area += ((y[0] + y[n-1]) * esp) / 2;
-	printf("A area e de %.2f.", area);
+	if (OS) system("clear");
+	else system("cls");
+	printf("A area e de %.2f.\n\n", area);
 }
 
 void ex5(){
@@ -137,6 +149,8 @@ void ex5(){
 		printf("Digite o %d numero: ", k+1); scanf("%d", &vec1[k]);
 	}
 	do {
+		if (OS) system("clear");
+		else system("cls");
 		printf("\n\nVetor 1:\n");
 		printArray(vec1, s1);
 		if (check2) {
@@ -165,7 +179,8 @@ void ex5(){
 						if (vec1[k] > vec1[j]) check = 0;
 					}
 				}
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				printf("\n\nO vetor %s ordenado.\n\n", check == 1 ? "esta" : "nao esta");
 				break;			
 			}	
@@ -175,30 +190,41 @@ void ex5(){
 				for (int k = 0; k<s1; k++){
 					vec2[k] = vec1[k];
 				}
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				check2 = 1;
 				break;
 			}
 			case 3:{
+				if (!check2){
+					printf("Voce ainda nao criou o vetor 2.\n\n");
+					break;
+				}
 				s2 = s1;
 				vec2 = (int*) malloc(s2 * sizeof(int));
 				for (int k = 0, j = s1-1; k<s2; k++, j--){
 					vec2[k] = vec1[j];
 				}
-				system("clear");
-       	        	        check2 = 1;
+				if (OS) system("clear");
+				else system("cls");
+       	        check2 = 1;
 				break;
-       	        	 }
+       	    }
 			case 4:{
 				for (int k = 0; k<s1/2; k++){
 					int aux = vec1[k];
 					vec1[k] = vec1[s1-1-k];
 					vec1[s1-1-k] = aux;
 				}
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				break;
 			}
 			case 5:{
+				if (!check2){
+					printf("Voce ainda nao criou o vetor 2.\n\n");
+					break;
+				}
 				s3 = s1 + s2;
 				vec3 = (int*) malloc(s3 * sizeof(int));
 				for (int k = 0, j = 0, i = 0; k < s3; k++){
@@ -212,11 +238,14 @@ void ex5(){
 						vec3[k] = vec1[j];
 					}
 				}
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				check3 = 1;
 				break;
 			}
 			case 6:{
+				if (OS) system("clear");
+				else system("cls");
 				int elim;
 				printf("Digite qual elemento deseja eliminar do vetor 1: ");
 				scanf("%d", &elim);
@@ -231,7 +260,8 @@ void ex5(){
 					}
 				}
 				vec1 = (int*) realloc(vec1, s1 * sizeof(int));
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				break;
 			}
 			case 7:{
@@ -248,21 +278,26 @@ void ex5(){
 					if (cont[k] < cont[menor]) menor = k;
 				}
 				if (maior != menor){
-					system("clear");
+					if (OS) system("clear");
+					else system("cls");
 					printf("\n\n\tO numero que mais repetiu-se foi %d, indice %d, %d vezes.\n", maior, vec1[maior], cont[maior]);
 					printf("\n\n\tO numero que menos repetiu-se foi %d, indice %d, %d vezes.\n", menor, vec1[menor], cont[menor]);
 				} else {
-					system("clear");
+					if (OS) system("clear");
+					else system("cls");
 					printf("\n\n\tTodos elementos apareceram %d vezes.", cont[maior]);
 				}
 				break;
 			}
 			case 0:{
-				printf("Saindo...");
+				if (OS) system("clear");
+				else system("cls");
 				exit = 0;
 				break;
 			}
 			default:{
+				if (OS) system("clear");
+				else system("cls");
 				printf("\t\t\n--Opcao invalida--\n\n");
 				break;
 			}
@@ -299,100 +334,108 @@ void ex6(){
 
 void ex7(){
 	int n, sim = 1, eq = 1;
-        printf("Digite a ordem das matrizes A e B: ");
-        scanf("%d", &n);
-        int a[n][n], b[n][n];
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<n; j++){
-                        printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &a[k][j]);
-                }
-        }
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<n; j++){
-                        printf("Entre com o valor da posicao B[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &b[k][j]);
-                }
-        }
+    printf("Digite a ordem das matrizes A e B: ");
+    scanf("%d", &n);
+    int a[n][n], b[n][n];
+    for (int k = 0; k<n; k++){
+            for (int j = 0; j<n; j++){
+                    printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
+                    scanf("%d", &a[k][j]);
+            }
+    }
+    for (int k = 0; k<n; k++){
+            for (int j = 0; j<n; j++){
+                    printf("Entre com o valor da posicao B[%d][%d]: ", k + 1, j + 1);
+                    scanf("%d", &b[k][j]);
+            }
+    }
 	for (int k = 0; k<n; k++){
                 for (int j = 0; j<n; j++){
                 	if (a[k][j] != b[k][j]){
 				eq = 0;
-				goto Exit;
 			}
 			if (a[k][j] != b[j][k]){
 				sim = 0;
-				goto Exit;
 			}
 		}
-        }
-	Exit:;
-	printf("As matrizes A e B %s iguais e %s simetricas.", eq == 0 ? "nao sao" : "sao", sim == 0 ? "nao sao" : "sao");
+    }
+	if (OS) system("clear");
+	else system("cls");
+	printf("As matrizes A e B %s iguais e %s simetricas.\n\n", eq == 0 ? "nao sao" : "sao", sim == 0 ? "nao sao" : "sao");
 }
 
 void ex8(){
 	int n, m;
-        printf("Digite o numero de linhas da matriz A: ");
-        scanf("%d", &n);
-	printf("Digite o numero de colunas da matriz B: ");
+    printf("Digite o numero de linhas da matriz A: ");
+    scanf("%d", &n);
+	printf("Digite o numero de colunas da matriz A: ");
 	scanf("%d", &m);
-        int a[n][m], at[m][n];
+    int a[n][m], at[m][n];
 	for (int k = 0; k<n; k++){
-                for (int j = 0; j<m; j++){
-                        printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &a[k][j]);
-                }
+        for (int j = 0; j<m; j++){
+            printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
+            scanf("%d", &a[k][j]);
         }
-	printMatrix(n, m, a);
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<m; j++){
+    }
+	if (OS) system("clear");
+	else system("cls");
+    printf("Matriz A: \n\n");
+	printMatrix(m, n, a);
+    for (int k = 0; k<n; k++){
+        for (int j = 0; j<m; j++){
 			at[j][k] = a[k][j];
-                }
         }
-	printMatrix(m, n, at);
+    }
+    printf("Transposta de A: \n\n");
+	printMatrix(n, m, at);
 }
 
 void ex9(){
 	int n;
-        printf("Digite a ordem das matrizes A e B: ");
-        scanf("%d", &n);
-        int a[n][n], b[n][n], dif[n][n];
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<n; j++){
-                        printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &a[k][j]);
-                }
+    printf("Digite a ordem das matrizes A e B: ");
+    scanf("%d", &n);
+    int a[n][n], b[n][n], dif[n][n];
+    for (int k = 0; k<n; k++){
+        for (int j = 0; j<n; j++){
+            printf("Entre com o valor da posicao A[%d][%d]: ", k + 1, j + 1);
+            scanf("%d", &a[k][j]);
         }
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<n; j++){
-                        printf("Entre com o valor da posicao B[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &b[k][j]);
-                }
+    }
+    for (int k = 0; k<n; k++){
+        for (int j = 0; j<n; j++){
+            printf("Entre com o valor da posicao B[%d][%d]: ", k + 1, j + 1);
+            scanf("%d", &b[k][j]);
         }
-        for (int k = 0; k<n; k++){
-                for (int j = 0; j<n; j++){
-                        dif[k][j] = a[k][j] - b[k][j];
-                }
+    }
+    for (int k = 0; k<n; k++){
+        for (int j = 0; j<n; j++){
+            dif[k][j] = a[k][j] - b[k][j];
         }
-        printMatrix(n, n, dif);
+    }
+	if (OS) system("clear");
+	else system("cls");
+    printf("Matriz diferenca: \n\n");
+    printMatrix(n, n, dif);
 }
 
 void ex10(){
 	int mat[2][2], det;
 	for (int k = 0; k<2; k++){
-                for (int j = 0; j<2; j++){
-                        printf("Entre com o valor da posicao MAT[%d][%d]: ", k + 1, j + 1);
-                        scanf("%d", &mat[k][j]);
-                }
+        for (int j = 0; j<2; j++){
+            printf("Entre com o valor da posicao MAT[%d][%d]: ", k + 1, j + 1);
+            scanf("%d", &mat[k][j]);
         }
+    }
+	if (OS) system("clear");
+	else system("cls");
 	printMatrix(2, 2, mat);
 	det = mat[0][0] * mat[1][1] - mat[1][0] * mat[0][1];
-	printf("\n\n\t\tA determinante da matriz e %d.", det);
+	printf("\n\n\t\tA determinante da matriz e %d.\n\n", det);
 }
 
 void ex11(){
 	int ord, check = 1;
-	printf("Digit a ordem da matriz desejada: ");
+	printf("Digite a ordem da matriz desejada: ");
 	scanf("%d", &ord);
 	int a[ord][ord];
 	for (int k = 0; k < ord; k++){
@@ -401,20 +444,24 @@ void ex11(){
 			scanf("%d", &a[k][j]);
 		}
 	}
+	if (OS) system("clear");
+	else system("cls");
 	printMatrix(ord, ord, a);
 	for (int k = 1; k < ord; k++){
 		for (int j = k - 1; j > -1; j--){
 			if (a[k][j] != 0) check = 0;
 		}
-		if (check == 0) goto Exit;
-    	}
-	Exit:;
-	printf("A matriz A %s triangular superior.\n", check == 1 ? "e" : "nao e");
+    }
+    printf("A matriz A %s triangular superior.\n\n", check == 1 ? "e" : "nao e");
 }
 
 int main(){
 	setlocale(LC_ALL, "");
 	int menu, Exit = 0;
+	printf("Digite seu sistema operacional: \n\t\t0.Windows\n\t\t1.Linux\n\n\t\tOpcao: ");
+	scanf("%d", &OS);
+	if (OS) system("clear");
+	else system("cls");
 	do {
 		printf("\n\tEscolha um exercicio: ");
 		printf("\n\t\t1.Contar numeros pares, impares e nulos");
@@ -433,69 +480,81 @@ int main(){
 		scanf("%d", &menu);
 		switch (menu){
 			case 1:{
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex1();
 				break;
 			}
 			case 2: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex2();
 				break;
 			}
 			case 3: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex3();
 				break;
 			}
 			case 4: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex4();
 				break;
 			}
 			case 5: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex5();
 				break;
 			}
 			case 6: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex6();
 				break;
 			}
 			case 7: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex7();
 				break;
 			}
 			case 8: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex8();
 				break;
 			}
 			case 9: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex9();
 				break;
 			}
 			case 10: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				ex10();
 				break;
 			}
-			case 11:{ 
-				system("clear");
+			case 11:{ if (OS) system("clear");
+				else system("cls");
 				ex11();
 				break;
 			}
 			case 0: {
-				system("clear");
+				if (OS) system("clear");
+				else system("cls");
 				printf("Saindo...");
 				Exit = 1;
 				break;
 			}
 			default: {
-				system("clear");
-				printf("Opcao invalida. Por favor entre com uma das seguintes: ");
+				if (OS) system("clear");
+				else system("cls");
+				printf("Opcao invalida. Por favor entre com uma das seguintes: \n");
 			}
 		}
 	} while(!Exit);
