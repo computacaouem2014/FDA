@@ -168,9 +168,156 @@ void ex2(){
 	printMatrixI(m, n, a);
 }
 
+void ex3(){
+	int m = 5, n = 5;
+	int a[m][n];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", &a[i][j]);
+			a[i][j] = rand() % 21;
+		}
+	}
+	printMatrixI(m, n, a);
+	int soma = 0, count = 0;
+	for (int i = 1; i < m; i++){
+		for (int j = i - 1; j >= 0; j--){
+			soma += a[i][j];
+			count++;
+		}
+	}
+	printf("%d, %d\n", soma, count);
+	float media = (float) soma / count;
+	printf("Media da soma dos elementos abaixo da diagonal principal: %.2f\n", media);
+}
+
+void ex4(){
+	int m = 3, n = 3;
+	int a[m][n];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", a[i][j]);
+			a[i][j] = rand() % 20;
+		}
+	}
+	printMatrixI(m, n, a);
+	
+}
+
+void ex5(){
+	int m = 3, n = 3;
+	int a[m][n];
+	int b[m][n];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", a[i][j]);
+//			printf("Informe o elemento B[%d][%d]: ", i+1, j+1);
+//			scanf("%d", b[i][j]);
+			a[i][j] = rand() % 20;
+			b[i][j] = rand() % 20;
+		}
+	}
+	printMatrixI(m, n, a);
+	printMatrixI(m, n, b);
+	int transposta = 1;
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+			if (a[i][j] != b[j][i]){
+				transposta = 0;
+				break;
+			}
+		}
+		if (!transposta) break;
+	}
+	printf("A matriz B %s transposta da matriz A.\n", transposta ? "e" : "nao e");
+}
+
+void ex6(){
+	int m = 3;
+	printf("Informe a ordem M da matriz: ");
+	scanf("%d", &m);
+	int a[m][m];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < m; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", a[i][j]);
+			a[i][j] = rand() % 20;
+		}
+	}
+	printMatrixI(m, m, a);
+	int simetrica = 1;
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < m; j++){
+			if (a[i][j] != a[j][i]) {
+				simetrica = 0;
+				break;
+			}
+		}
+		if (!simetrica) break;
+	}
+	printf("A matriz A %s simetrica.\n", simetrica ? "e" : "nao e");
+}
+
+void ex7(){
+	int m;
+	do {
+		printf("Informe a ordem M da matriz: ");
+		scanf("%d", &m);
+	} while (m > 9 || m < 1);
+	int a[m][m];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < m; j++){
+			int change = i > j ? i - j : j - i;
+			a[i][j] = m - change;
+		}
+	}
+	printMatrixI(m, m, a);
+	
+}
+
+void ex8(){
+	int m = 5, n = 5;
+	int a[m][n];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", a[i][j]);
+			a[i][j] = rand() % 20;
+		}
+	}
+	int maior, linhamaior;
+	printMatrixI(m, n, a);
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+			if (a[i][j] > maior){
+				maior = a[i][j];
+				linhamaior = i;
+			}
+		}
+	}
+	int minimax = a[linhamaior][0];
+	for (int i = 1; i < m; i++) if (a[minimax][i] < minimax) minimax = a[linhamaior][i];
+	printf("Minimax: %d", minimax);
+}
+
+void ex9(){
+	int m = 3, n = 3;
+	int a[m][n];
+	for (int i = 0; i < m; i++){
+		for (int j = 0; j < n; j++){
+//			printf("Informe o elemento A[%d][%d]: ", i+1, j+1);
+//			scanf("%d", a[i][j]);
+			a[i][j] = rand() % 20;
+		}
+	}
+	printMatrixI(m, n, a);
+}
+
 int main(){
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
-	ex2();
+	ex8();
 	return 0;
 }
