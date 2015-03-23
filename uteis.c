@@ -117,7 +117,7 @@ OBS:
 */
 void bubble(int arr[], int size){
 	int temp;
-	for (int k = size; k >  0; k--){
+	for (int k = size - 1; k >  0; k--){
 		for (int j = 0; j < k; j++){
 			if (arr[j] > arr[j + 1]){
 				temp = arr[j];
