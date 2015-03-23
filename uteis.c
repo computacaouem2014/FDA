@@ -402,3 +402,37 @@ void randMatrix(int lines, int col, int arr[lines][col], int max, int min){
 			arr[k][j] = rand() % max + min;
 	}
 }
+
+/*
+TAGS: CROSS-PLATAFORM, CLEARSCREEN
+     - Limpa a tela do terminal em todas as plataformas.
+*/
+
+void clear_screen(){
+        #ifdef WINDOWS
+                system("cls");
+        #else
+                system ("clear");
+        #endif
+}
+
+/*
+TAGS: WEB
+     - Abre o site indicado no navegador padrão.
+     OBS: Necessita de #include <string.h>, necessita também do protocolo HTTP/HTTPS:// no pointer/vetor.
+     Exemplo: char *site = {"h", "t", "t", "p", ":", "/", "/", "w", "w", "w", ".", "g", "o", "o", "g", "l", "e", ".", "c", "o", "m"};
+     	      startWeb(site);
+*/
+
+void startWeb(char *site){
+        char startUrl[254];
+        #ifdef _WIN32
+                strcpy(startUrl, "start ");
+                strcat(startUrl, site);
+                system(startUrl);
+        #else
+                strcpy(startUrl, "xdg-open ");
+                strcat(startUrl, site);
+                system(startUrl);
+        #endif
+}
