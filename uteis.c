@@ -330,13 +330,15 @@ TAGS: ARRAY, VETOR, SORT, INSERTION, ORDENACAO
     - Output:
     	in = {1, 2, 3, 4, 6, 7, 9}
 */
-void insertionSort(int *arr, int size){
-    for (int i = 0; i < size; i++){
-        for (int k = i; k > 0; k--){
-            if (arr[k] < arr[k-1])
-                swap(arr, k, k-1);
-        }
-    }
+void insertion(int *arr, int size){
+	for(int i = 1; i < size; i++){
+		int j = i - 1, change = arr[i];
+		while(change < arr[j] && j >= 0){
+			arr[j + 1] = arr[j];
+			j--;
+		}
+		arr[j + 1] = change;
+	}
 }
 
 /*
