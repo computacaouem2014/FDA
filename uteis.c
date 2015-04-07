@@ -1,4 +1,4 @@
-#include <stdlib.h>
+﻿#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <locale.h>
@@ -49,7 +49,7 @@ void printMatrix(int m, int n, int arr[m][n]){
     if (m*n > n){
         printf("\n⎡");
         for (int j = 0; j < n; j++){
-            printf("%6d ", arr[0][j]);
+            printf("%6d ", arr[0][j]);	
         }
         printf("⎤\n");
         printf("⎢");
