@@ -37,7 +37,6 @@ void printArray(int a[], int size) {
 		printf("]\n");
 	} else if (size == 1){
 		printf("\n[%d]\n", a[0]);
-	}
 	} else printf("\n[]\n");
 }
 
