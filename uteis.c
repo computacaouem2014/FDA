@@ -165,10 +165,14 @@ Exemplos:
     - Gerar numeros de 1000 a 10000: randNum(arr, arrSize, 1000, 10000);
 */
 void randNum(int arr[], int size, int max, int min){
-	srand(time(NULL));
 	max -= min;
 	for (int k = size - 1; k>=0; k--)
 		arr[k] = rand() % max + min;
+}
+
+//Adicionar esta linha ao main
+int main(){
+    srand(time(NULL));
 }
 
 /*
